@@ -62,16 +62,19 @@ C. total_age = wife_age + husband_age
 D. index_num+=1
 E. if result == None:
         print(""success"")"	C
+
 下列哪些事件应该记录在运行日志中	
 A. 服务挂载硬盘失败
 B. 服务启动、服务停止
 C. 配置文件加载成功/失败
 D. CPU、内存和硬盘的过载和恢复信息"	ABCD
+
 下列哪些事件应该记录在运行日志中	
 A. 操作维护人员发起的对云服务的部署、升级、配置、更新、扩缩容等维护操作
 B. 定时/自动任务发起的对云服务的配置、更新、创建VM、删除VM等维护操作
 C. 用户（指系统管理员、操作维护员、系统监控员等）登录、注销和鉴权等
 D. 对敏感信息例如话单、账单、用户的银行卡信息、余额信息、位置信息等的访问等"	ABCD
+
 哪个代码执行效率最慢	
 A.
 1.s1, s2 = 'Xi', 'Gua'
@@ -82,26 +85,31 @@ B.
 C.
 1.s1, s2 = 'Xi', 'Gua'
 2. 'hi' + s1 + s2"	B
+   
 可迭代对象必须实现哪些方法	
 A. __iter__()
 B. __super__()
 C. __next__()
 D. __reduce__()"	A
+
 已知一棵7层完全二叉树的第六层（设根为第一层）有7个叶节点，则该完全二叉树的节点个数最多是（）	
 A. 38
 B. 51
 C. 113
 D. 120"	C
+
 关于软件工程，以下说法错误的是	
 A. 软件工程是一个工程学科，涵盖了软件生产的各个方面，从出事的构想到运行和维护
 B. 软件工程是指实现软件生产开发的活动序列
 C. 软件工程的目的是支持专业特化的软件开发，而非个人编程
 D. 软件工程发展的目的就是希望找到一种合适的方法和技术运用于软件系统"	B
+
 对于需求管理，理解不正确的是	
 A. 纯软件需求决策由软件RMT负责
 B. 产品软硬件结合需求决策由对应产品SPDT RMT负责
 C. 需求冲突时可在CCB会议仲裁
 D. 产品RAT负责各个产品系列的软硬结合需求分析"	C
+
 关于局部变量的作用域，如下代码的输出是什么	
 ```python
 def hande(x):
@@ -123,7 +131,8 @@ def foo_1(x):
     return bar()
 print("%s,%s"%)
 ```
-A.y,3	A
+A.y,3
+
 有一个 UTF-8 编码的文件，需要转码成 GBK 编码的文件，操作流程正确的是	
 decode(‘utf-8’) —>encode(‘gbk’)，	
 
@@ -140,43 +149,70 @@ C. 在定义类时，可用过metaclass参数来指定此类的元类
 D. Python类语句执行时，会先查找其类本身的metaclass属性，如果没找到，会继续在父类中找，还没找到，则到模块中找，最后再用内置的type来创建此类对象
 E. 使用类、函数都可以当做元类，通常在new()方法中通过type来自定义自己的元类
 F.  从设计的复杂度来讲，尽量少用元类，多用普通类或函数"	ABCDF
+
 关于面向对象编码，下列说法正确的是	
 A. 对于类的公有属性，不应该在名称前加下划线
 B. 对于简单的类公有变量，最好不要设置过多的getter/setter，直接访问即可
 C. classmethod首选使用cls拼写作为第一个参数的名称
 D. 避免使用属性进行计算成本高昂的操作"	ABCD
+
 某软件用户注册界面要求输入用户名和密码，用户名和密码都限定为7~10位数据和字母的组合，若用等价类划分设计测试用例，则（）符合等价类设计要求	
 A. (用户名，密码) = (Abc123, abcD1238)
 B. (用户名，密码) = (!123, 123ABcde)
 C. (用户名，密码) = (1234Ab, !Ac1234)
 D. (用户名，密码) = (@123adc, 123iopA)"	ABD
+
 下列关于序列化和反序列化说法正确的是（）	
 A. 禁止对不可信来源的数据进行unpickle和load shelf
 B. 将敏感对象发送出信任区域前只需进行签名，不需要进行加密操作
 C. 禁止序列化未加密的敏感数据
 D. 因为shelf依赖于pickle，所以不可信来源的laod shelf也是不安全的"	ACD
+
 下列哪些描述是符合安全编程规范的	
 A. 禁止在日志中保存口令、密钥和其他敏感信息
 B. 禁止使用私有或者弱加密算法
 C. 基于哈希算法的口令安全存储必须加入盐值（salt）
 D. 禁止将敏感信息硬编码在程序中
 E. 禁止使用SSLSocket来进行安全数据交互"	ABCD
+
 （多选）禁止采用如下哪些算法进行口令加密（）	
 A. RSA
 B. DES
 C. SKIPJACK
 D.MD5"	BCD
+
 可以用作python模块搜索路径的是	
 A. sys.path 指定的路径列表
 B. 环境变量PYTHONPATH指定的相关路径
 C. 环境变量PATH指定的相关路径
 D. Python标准库"	ABD
-str_list为多个字符串的列表，内存最少，不考虑时间，优先使用拼接方式（）		B
+
+str_list为多个字符串的列表，内存最少，不考虑时间，优先使用拼接方式（）		
+A. return ''.join(str_list)
+B. 
+result = ''
+for i in str_list:
+    result +=i
+return result
+C.
+buffer = io.s=StringIO()
+for i in str_list:
+    buffer.write(i)
+return buffer.getvalue()
+D.
+str_tuple = (i for i in str_list)
+result = ''
+for i in str_tuple:
+    result += i
+return result
+答案:B
+
  代码覆盖率最高的是	
 A. 语句覆盖
 B. 判定覆盖
 C. 条件覆盖
 D. 组合覆盖"	D
+
 "下面代码 print(a, b) 输出
 a = 1
 b = 2
@@ -186,6 +222,8 @@ A. 1 2
 B. 2 1
 C. 错误
 D. 2 2"	B
+
+下列代码输出结果:
 "class GrantParent:
     def __init__(self):
         print('Hello GrantParent.')
@@ -217,77 +255,93 @@ GrantParent.__init__()
 GrantParent.__init__()
 Parent.__init__()
 Child.__init__()"	A
+
 关于公网地址，下面的是不正确（）	
 A. httplib.HTTPConnection('www.python.com')
 B. urllib.open('https://www.huawei.com')
 C. ftp=FTP('ftp.debian.org')
 D. test_sites = read_from_file() "	ABC
+
 日志记录正确的是（）	
 A. 日志中禁止记录口令、密钥等敏感信息
 B. 特殊原因必须要记录日志，应该使用固定长度的星号（*）代替口令、密钥等敏感信息
 C. 日志不可以记录明文口令，但可以记录加密后口令
 D. 日志可以随便记录"	AB
+
 8核CPU下仅使用threading库，CPython解释器下同一时刻最多有（）个线程执行	
 A. 1
 B. 2
 C. 4
 D. 8"	A
+
 仅允许80、8000、8080端口通过，等价类测试时有效等价类和无效等价类有	
 A. 4,1
 B. 3,1
 C. 3,2
 D. 4,2"	B
+
 "某系统有三个输入A,B,C，每个输入的取值个数分别为4,6,7，使用EC（单一选择组合）方法设计测
 试用例，至少需要设计多少个用例（）"	
 A. 3
 B. 7
 C. 15
 D. 17"	B
+
 数据组合测试，用例个数最少的是	
 A. EC（单一选择组合）
 B. BC（基本选择组合）
 C. AC（全组合）
 D. Pair-wise"	A
+
 路径检查，正确的是	
 A. os.normalpath('/home/python/xxx')
 B. os.realpath('/home/python/xxx')
 C. os.abcpath('/home/python/xxx')
 D. '/home/python/xxx'.startwith()"	B
+
 正确的是	
 A. 禁止对不可信来源的数据进行unpickle和load shelf
 B. 将敏感对象发送出信任区域前只需进行签名，不需要进行加密操作
 C. 禁止序列化未加密的敏感数据
 D. 因为shelf依赖于pickle，所以从不可信来源的数据load shelf也是不安全的"	ACD
+
 下面正确的是	
 A. {('a'): 1} == {('a',): 1}
 B. {'a': 1, 'b': 2} == {'b': 2, 'a': 1}
 C. {1: 1, 2: 2} == dict({2: 2, 1: 1})
 D. {} == dict()"	BCD
+
 下面正确的是	
 A. 'β' > 'α'
 B. 'A' == 'a'
 C. 'A' + 'a' == 'a' + 'A'
 D. 'a' * 2 == 2 * 'a'"	AD
+
 print(7 % (7 // 3)) 输出	
 A. 1
 B. 2
 C. 1.0
 D. 2.0"	 A
+
 {1, 2, 3, 4, 5} ^ {5, 6} 结果是	
 A. {1,2,3,4}
 B. {1,2,3,4,5,6}
 C. {1,2,3,4,6}
 D. {6}"	C
+
 print(int('1' + '2') + 2) 输出	
 A. 14
 B. 2
 C. 错误
 D. 5"	A
+
 print(eval ('2+4'))	
 A. eval (‘2+4’)
 B. 6
 C. ‘2+4’
 D. 错误"	B
+
+下面代码输出:
 "class Next:
     def __init__(self):
         self.data = [0, 1, 2, 3, 4]
@@ -313,18 +367,31 @@ C.
 0 1 2 3
 D.
 0 1 2 3"	B
-下面代码输出	
+
+下面代码输出:
+result = [1,2,3,4,5]
+result[1:3] = 'abc'
+print(result[2])
 A. ‘a’
 B. ‘b’
 C. 3
 D. ‘abc‘"	B
+
 下面代码输出	
+funcs = []
+for i in range(4):
+    def closer_func(x):
+        return x*i
+    func.append(closer_func)
+print([m(2) for m in funcs])
 A. [6, 6, 6, 6]
 B. [0, 1, 2, 3]
 C. [0, 2, 4, 8]
 D. [0, 2, 4]"	A
+
 print([(lambda x:i*x)(2) for i in range(5)])		 [0, 2, 4, 6, 8]
-"下面代码输出
+
+下面代码输出:
 class ReadOnlyDict(dict):
     def __init__(self, *args, **kwargs):
         super(ReadOnlyDict, self).__init__(*args, **kwargs)
