@@ -537,51 +537,113 @@ A. SQL Injection安全漏洞可以攻击系统数据库，篡改数据库数据�
 B. SQL Injection可以通过危及客户端安全，来盗取用户个人敏感数据。
 C. SQL Injection主要是来自用户或者外界的非信任源的数据在进行SQL查询时，没有过滤或者过滤不完备，外部字符串包含特定字符，改变了原来语句的查询本意。
 D. SQL Injection安全漏洞可以通过安全的输入校验机制来预防。"	B
+
 关于随机数的描述，错误的是（）	
 A. 真正意义上的随机数其结果是不可预测的，安全随机数并非真正意义上的随机数
 B. 现代密码学是基于密钥安全的，随机数的质量决定密钥的质量
 C. C标准函数random()所产生的随机数不属于安全随机数
 D. 安全随机数的要求是不可预测、绝对安全"	D 
+
 基于《密码算法应用规范》,下列哪种随机数生成方式自身会出现安全漏洞？	
 A. Linux操作系统的/dev/random设备接口
 B. OpenSSL1.1.X的RAND_priv_bytes
 C. NIST SP 800-90A标准中的DualEC-DRBG生成器
 D. JDK的java.security.SecureRandom"	C
-以下哪些选项符合《华为Python语言编程规范》中“异常处理”章节的要求和建议（）		CDE
+
+以下哪些选项符合《华为Python语言编程规范》中“异常处理”章节的要求和建议（CDE）	
+A.
+import contextlib
+class Example(contextlib.AbstractContextManager):
+    def __exit__(self,exc_type, exc_value,tracback):
+        ...
+        return 1
+B.
+import contextlib
+class Example(contextlib.AbstractContextManager):
+    def __exit__(self,exc_type, exc_value,tracback):
+        ...
+        return exc_type(exc_value)
+C.
+import contextlib
+class Example(contextlib.AbstractContextManager):
+    def __exit__(self,exc_type, exc_value,tracback):
+        return True
+D.
+import contextlib
+import time
+
+class Example(contextlib.AbstractContextManager):
+    def __init__(self):
+        self.start = 0
+    
+    def __enter__(self):
+        self.start = time.time()
+
+    def __exit__(self,exc_type, exc_value,tracback):
+        print("Running cost seconds",time.time() - self.start)
+E.
+import contextlib
+
+class Example(contextlib.AbstractContextManager):
+    def __exit__(self,exc_type, exc_value,tracback):
+        ...
+        return exc_type(exc_value)
+CDE
+
+
 Python3.8版本中，下列哪些选项符合《华为Python语言编程规范》中“数据安全处理”章节的要求和建议（）	
 A. os.urandom 在linux系统环境中生成的随机数不可用于安全加密目的。
 B. os.urandom 在windows系统环境中生成的随机数不可用于安全加密目的。
 C. os.urandom 在linux系统环境中生成的随机数可用于安全加密目的。
 D. os.urandom 在windows系统环境中生成的随机数可用于安全加密目的。"	CD
+
 内置函数dir()的作用是（）	
 A. dir()函数不带参数时，返回当前范围内的变量、方法和定义的类型列表；带参数时，返回参数的属性、方法列表。如果参数包含方法__dir__()，该方法将被调用。如果参数不包含__dir__()，该方法将最大限度地收集参数信息。
 B. dir()函数不带参数时，列出当前目录的所有文件，带参数时，列出指定目录下所有文件。
 C. dir()函数判断指定的参数是否为目录。
 D. dir()函数判断指定的参数是否为文件。"	A
+
 logging模块提供日志功能，默认情况下，如下哪种说法是正确的（）	
 A. 默认情况下，logging模块将日志打印到屏幕（stdout），日志级别为WARNING级以上的才输出
 B. 默认情况下，logging模块将日志打印到文件log.log，日志级别为WARNING级以上的才输出
 C. 默认情况下，logging模块将日志打印到文件log.log，所有日志级别的信息都输出
 D. 默认情况下，logging模块将日志打印到屏幕（stdout），所有日志级别的信息都输出"	A
+
 如下哪个代码不存在SQL注入风险		C
+C:
+sql = "SELECT * FROM table WHERE id=?"
+connecton.execute(sql,(value,))
+
 下面哪一项是避免SQL注入攻击的推荐做法（）	
 A. 使用预处理语句或参数化查询创建动态查询
 B. 使用MySQLdb或SQLAIchemy，在用户环境中以最大权限执行查询
 C. 将用户输入设置为正确类型，再在数据库中直接引用任意表格
 D. 在将参数作为元组向execute()函数传递前，使用黑名单验证并辅以参数转义"	A
+
 关于序列非空判断，如下哪个符合PEP8规范（）		A
+A:
+if not seq:
+    pass
+
 在unitest单元测试框架中，通过TextTestRunner类的run方法，提供了丰富的执行策略和执行结果，run()方法的入参可以是如下哪些类的对象（）	
 A. TestCase
 B. TestSuit
 C. TestRunner
 D. TestResult"	AB
+
 "result = {i*2 for i in [1,2,3]}
-print(type(result))"		<class 'set'>
+print(type(result))"		
+答案:
+<class 'set'>
+
 "value = set([1,2,3,4])
 for num in value:
     value.remove(num)
-print(value)"		
-"class A:
+print(value)"	
+答案:
+RuntimeError: Set changed size during iteration
+
+class A:
     x = 0
 
 a = A()
@@ -604,63 +666,58 @@ a = A()
 a.x = a.x
 A.x = 1
 
-print(a.x, A.x) # 0 1"		
-"item = [""hello""]
+print(a.x, A.x) # 0 1
+
+
+item = ["hello"]
 items = [item] * 3  # 乘 3 之后得到的是一个 3行, 1列的二维数组, 而不是个1行3列的数组
 print(items)  # [['hello'], ['hello'], ['hello']]
 items_1 = item * 3  # 乘 3 之后得到一个 1行, 3列的一维数组
 print(items_1)  # ['hello', 'hello', 'hello']
-items[0][0] = ""world""
+items[0][0] = "world"
 print(items)  # [['world'], ['world'], ['world']]
-items_1[0] = ""world""
+items_1[0] = "world"
 print(items_1)  # ['world', 'hello', 'hello']
 # print(items[0][1]) # IndexError: list index out of range
 # print(items[0][2]) # IndexError: list index out of range
-print(items[0][0])
-print(items[1][0])
-print(items[2][0])"		"[['hello'], ['hello'], ['hello']]
-['hello', 'hello', 'hello']
-[['world'], ['world'], ['world']]
-['world', 'hello', 'hello']
-world
-world
-world"
-"result = {i * 2 for i in [1, 2, 3]}
-print(type(result))
-print(result)
+print(items[0][0]) # world
+print(items[1][0]) # world
+print(items[2][0]) # world
+
+result = {i * 2 for i in [1, 2, 3]}
+print(type(result)) # "<class 'set'>
+print(result)       # {2, 4, 6}
 # 通过[] 括起来的推导式, 返回的是列表
 result = [i * 2 for i in [1, 2, 3]]
-print(type(result))
-print(result)
+print(type(result)) # <class 'list'>
+print(result)       # [2, 4, 6]
 # 用括号括起来的推导式, 返回的是生成器函数(对象), 不是tuple, 需要通过循环遍历, 或者list()
 # 通过循环只能迭代一个轮次
 # 生成器函数不用常驻内存,临时用的时候取出来. 考虑性能的场景下推荐使用
 result = (i * 2 for i in [1, 2, 3])
-print(type(result))
-print(result)
+print(type(result)) # <class 'generator'>
+print(result)       # <generator object <genexpr> at 0x0000024E5FA7B5A0>
 for i in result:
-    print(i)"		"<class 'set'>
-{2, 4, 6}
-<class 'list'>
-[2, 4, 6]
-<class 'generator'>
-<generator object <genexpr> at 0x0000024E5FA7B5A0>
+    print(i)		
+"""
 2
 4
-6"
-"import copy
+6
+"""
+
+import copy
 l1 = [[1], 2.3]
 l2 = l1
-print(id(l2) == id(l1))
+print(id(l2) == id(l1)) # True
 l2 = copy.copy(l1)
 l2[0][0] = 2
-print(l1)
-print(id(l2) == id(l1))"		"True
-[[2], 2.3]
-False"
-"x = 100 or 200
-print(x)"		100
-"class A:
+print(l1)               # [[2], 2.3]
+print(id(l2) == id(l1)) # False
+
+x = 100 or 200
+print(x) # 100
+
+class A:
     def check(self):
         return ""demo""
 
@@ -673,16 +730,17 @@ class B(A):
         return (""derived"")
 
 
-A().display()
-B().display()"		"demo
-derived"
-"for i in range(1, 3):
+A().display() # demo
+B().display() # derived
+
+for i in range(1, 3):
     for j in range(i, i+1):
         if j >= 2:
             break
     else:
-        print(i)"		1
-"def func(**args, a=1):
+        print(i) # 1
+
+def func(**args, a=1):
     print(1)
 
 def func(*args, a =1):
@@ -692,8 +750,10 @@ def func(a=1, *args):
     print(1)
 
 def func(a=1, **args):
-    print(1)"		第一个错
-"class Spam(object):
+    print(1) # 第一个错
+
+
+class Spam(object):
     n_i = 0
     def __init__(self):
         Spam.n_i +=1
@@ -702,22 +762,31 @@ class Sub(Spam):
     n_i = 0
 
 sub = Sub()
-print(sub.n_i, Spam.n_i)"		0 1
-"北京'.encode('utf8')
+print(sub.n_i, Spam.n_i) # 0 1
+
+'北京'.encode('utf8')
 '北京'.decode()
 '北京'.encode().decode()
-'北京'.encode()"		第二个错
-"下列哪些结果是2
+'北京'.encode() # 第二个错
+
+下列哪些结果是2
 1 a = [1,2,3]
 2 print(list(filter(lambda x: x % 2 == 0, a)))
 3 print(list(filter(lambda x: 3 * (x + 1) / 3 % 3 == 0, a)))"		2,3
-		[2,4]
-"哪些不能正常输出foo'bar
+		
+关于高阶函数filter的使用,下面代码的输出是什么:
+nums = [1,2,3,4,5]
+result = list(filter(lambda x:x%2 == 0,nums))
+print(result) # [2,4]
+
+哪些不能正常输出foo bar
 1 print(""""""foo'bar"""""")
 2 print(""foo'bar"")
 3 print('foo\'bar')
 4 print('foo'bar')"		4
-"import re
+
+以下代码的输出是
+import re
 
 sum = 0
 pattern = 'back'
@@ -730,18 +799,23 @@ if re.search(pattern, 'backup.txt'):
 if re.search(pattern, 'text.back'):
     sum += 8
 
-print(sum)"		13
-"sentence = 'we are humans'
+print(sum) # 13
+
+以下代码的输出是:
+sentence = 'we are humans'
 matched = re.match(r'(.*) (.*) (.*)', sentence)
 print(matched.group())  # we are humans
 print(matched.groups())  # ('we', 'are', 'humans')"		
-"m = re.match('(\w\w\w)-(\d?)', 'abc-123')
+
+以下代码的输出是:
+m = re.match('(\w\w\w)-(\d?)', 'abc-123')
 print(m.group())  # abc-1
 print(m.groups())  # ('abc', '1')
 print(m.group(0))  # abc-1
 print(m.group(1))  # abc
 print(m.group(2))  # 1"		
-"line = ""Cats are smarter than dogs""
+
+line = ""Cats are smarter than dogs""
 # .* 表示任意匹配除换行符（\n、\r）之外的任何单个或多个字符
 matchObj = re.match(r'(.*) are (.*?) .*', line, re.M | re.I)
 
@@ -756,8 +830,10 @@ matchObj.group() :  Cats are smarter than dogs
 matchObj.groups() :  ('Cats', 'smarter')
 matchObj.group(0) :  Cats are smarter than dogs
 matchObj.group(1) :  Cats
-matchObj.group(2) :  smarter"		
-"def outter():
+matchObj.group(2) :  smarter
+
+以下代码的输出是:
+def outter():
     va = 0
     vb = 0
 def inner():
@@ -766,8 +842,9 @@ def inner():
     va = 1
 inner()
 print(va, vb)
-outter()"		1 0
-" 以下哪个会返回False(C)
+outter() # 1 0
+
+以下哪个会返回False(C)
 # A
 print((r""<>."").isascii())
 # B
@@ -776,13 +853,16 @@ print((u""Chinese"").isascii())
 print((u""中文"").isascii())
 # D
 print((b'Chinese'.isascii()))"		C
-"哪些会异常------选C
+
+哪些会异常------选C
 A s1 = '{}'.format('中文')
 B s1 = '{}'.format('English')
 C s1 = b'' + '中文'
 D s1 = '%s'%'English'"		C
+
 选项里有个print(b""+ "xxx")的一个题，应该是不能运行的		
-" 哪个返回结果正确(C)
+
+哪个返回结果正确(C)
 # A
 2.0 << 2 # 返回8
 # B
@@ -791,22 +871,29 @@ D s1 = '%s'%'English'"		C
 (2) << 2 # 返回8
 # D
 [2] << 2 #返回8"		C
-"import functools
+
+以下代码的输出是
+import functools
 
 int_base2 = functools.partial(int, base=2)
 int_base16 = functools.partial(int, base=16)
-print(int_base2('1000000'))
-print(int_base16('1101'))"		"64
-4353"
-"import asyncio
+print(int_base2('1000000')) # 64
+print(int_base16('1101'))   # 4353
+
+以下代码的输出是
+import asyncio
 
 async def main():
     print('hello')
    await asyncio.sleep(1)
    print('world')
-asyncio.run(main())"		"hello
-world"
-set的用法，哪一种可以把set中的2删掉(AB)	"# A
+asyncio.run(main())
+答案:
+hello
+world
+
+set的用法，哪一种可以把set中的2删掉(AB)	
+# A
 set1 = {1,2,3,4,5}
 set1.remove(2)
 set1
@@ -821,12 +908,15 @@ set1
 # D
 set1 = {1,2,3,4,5}
 del set1[2]"	AB
-"setPriority
-原题目记不太清，大概是题目要想提高python运行的优先级该怎么使用setPriority。"		选-20
-" 多线程
+
+setPriority
+原题目记不太清，大概是题目要想提高python运行的优先级该怎么使用setPriority。		选-20
+
+多线程
 是道关于多线程的代码题，代码太长了记不住，看代码的意思应该是有两个线程互相锁，选项是在代码中不同位置的print是否能print出结果，应该是考察线程的上锁，这题我没复习到也做错了(:з」∠)
 代码大概用到了 lock(), release(), start() 等方法，看代码还是挺规范的应该不是什么刁钻的题，原理了解清楚了应该不难。建议复习的时候找点threading的官方文档看看"		
-"importlib.import_module
+
+importlib.import_module
 一道多选题，包的结构是：
 a/a.py 
 def func():
