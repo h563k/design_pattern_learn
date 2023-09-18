@@ -1843,15 +1843,17 @@ for a[-1] in a:
 A. 代码出错
 B. 0, 1, 2, 3
 C. 0, 1, 2, 2
-D. xxx"	C
+D. xxx # C
 
 
 现有列表result = [2, 3, ['a', 'b', 'c'], 1]，python3解释器执行result[2].extend('de')后result的值是	
 A.    [2, 3, ['a', 'b', 'c'], 1, 'de']
 B.     [2, 3, ['a', 'b', 'c'], 1, 'd', 'e']
 C.     [2, 3, ['a', 'b', 'c', 'd', 'e'], 1]
-D.     [2, 3, ['a', 'b', 'c', 'de'], 1]"	C
-"def remove_value_bigger_than_100(data):
+D.     [2, 3, ['a', 'b', 'c', 'de'], 1] # C
+
+
+def remove_value_bigger_than_100(data):
     index = 0
     for unit in data:
         if unit > 100:
@@ -1861,12 +1863,13 @@ D.     [2, 3, ['a', 'b', 'c', 'de'], 1]"	C
 
 
 x = [1, 212, 12, 123, 124]
-print(remove_value_bigger_than_100(x))"	
+print(remove_value_bigger_than_100(x))
 A. 代码报错 IndexError: list index out of range
 B. [1, 12]
 C. [1, 12, 123]
 D. [1, 12, 124]
-E. [1, 212, 12, 123, 124]"	D
+E. [1, 212, 12, 123, 124] # D
+
 
 A = ('string',) 
 for x in range(2): 
@@ -1877,6 +1880,8 @@ B. (('string',),)
 ((('string',),),)
 C. ('string',)
 ('string',)"	B
+
+
 以下多行代码，可以执行的是（多选）	
 A.
 res = '1' + '2' + '3' 
@@ -1895,19 +1900,24 @@ res = '1' + '2' + '3' \
       + '4' + '5' + '6' \ 
       + '7' + '8' + '9' \ 
  
-其他代码块
-"	BCD
+其他代码块  # BCD
+
+
 以下能输出001的是（多选）	
 A. print( ""{0:03d}"".format(1) )
 B. print( ""{0:03}"".format(1) )
 C. print( ""{0:3}"".format(1) )
 D. print( ""{0:30d}"".format(1) )"	AB
+
+
 以下哪个表达式的值为True	
 A. 7 // 3.2 * 2 > 2
 B. 7 // 3.2 ** 2 > 2
 C. 3 or 2 & 5 ==1
-D. 3 and 2 & 5 > 0"	A
-"name = ""huawei"" 
+D. 3 and 2 & 5 > 0 # A
+
+
+name = "huawei" 
 for i,s in enumerate(name): 
     if s == ""w"": 
         print(i,'A') 
@@ -1915,9 +1925,12 @@ for i,s in enumerate(name):
     if s == ""u"": 
         print(i,'B') 
 else: 
-    print(i,'X')"		"1 B
-3 A"
-"def make_fun(func): 
+    print(i,'X')
+答案:
+1 B
+3 A
+
+def make_fun(func): 
     def inner(): 
         print('make_fun().inner()') 
         func() 
@@ -1938,24 +1951,38 @@ function1()
 make_fun().inner()
 D.
 function1()"	A
-"def func(a, *b): 
+
+
+def func(a, *b): 
     for item in b: 
         a += item 
     return a 
 m=0 
-print(func(m,1,1))"	
+print(func(m,1,1))
 A. 0
 B. 1
-C. 2"	C
-以下哪些代码可以正确输出foobar		ABC
-"class AException(Exception): 
+C. 2	C
+
+
+以下哪些代码可以正确输出foobar		
+A. temp = {'a':'foo','b':bar}
+print('{a}{b}'.format(**temp))
+B. temp = 'foo','bar'
+print('{0}{1}'.format(*temp))
+C. temp = ['foo','bar']
+print('{0}{1}'.format(*temp))
+D. temp = {'foo','bar'}
+print('{0}{1}'.format(*temp))
+ABC
+
+
+class AException(Exception): 
     def __init__(self): 
-        Exception.__init__(self, "
-AException"") 
+        Exception.__init__(self, "AException") 
  
 class BException(AException): 
     def __init__(self): 
-        Exception.__init__(self, ""BException"") 
+        Exception.__init__(self, "BException") 
  
 try: 
     try: 
@@ -1963,20 +1990,27 @@ try:
     except AException: 
         raise 
 except Exception as exc: 
-    print(""catch exception: %s"" % exc)
-"		catch exception: BException
-"def test(ver): 
+    print("catch exception: %s" % exc)
+输出:
+catch exception: BException
+
+
+
+
+def test(ver): 
     try: 
-        if ver.lower() == ""true"": 
-            return ""High"" 
+        if ver.lower() == "true": 
+            return "High" 
     except Exception: 
         pass 
     else: 
-        return ""M"" 
+        return "M" 
     finally: 
-        return ""I"" 
-print(test(True))"		I
-"def divide(denominator, numberator): 
+        return "I" 
+print(test(True)) # 输出 I
+
+
+def divide(denominator, numberator): 
     try: 
         return denominator / numberator 
     except: 
@@ -1984,12 +2018,14 @@ print(test(True))"		I
     finally: 
         return '-1' 
  
-print(divide(denominator=2, numberator=1), divide(denominator=2, numberator=0))"	
+print(divide(denominator=2, numberator=1), divide(denominator=2, numberator=0))
 A. 2 0
 B. 2 -1
 C. -1 0
 D. -1 -1"	D
-"以下代码打印的最大数字是
+
+
+以下代码打印的最大数字是
 try: 
     print(1) 
     assert 2 + 2 == 5 
@@ -2001,7 +2037,9 @@ A. 3
 B. 4
 C. 5
 D. 1"	A
-"如下包及模块，运行test.py，输出结果是
+
+
+如下包及模块，运行test.py，输出结果是
 # test.py 
 from tests import * 
 test2() 
@@ -2019,14 +2057,33 @@ def test2():
     print('hello world')"	
 A. hello world
 B. hello python
-C. ''"	B
-		BD
+C. ''  # B
+
+
+/sample_project
+| main.py
+|-project_a
+| |_childa
+| | |_module_a.py
+| |_childa
+|   |_module_c.py
+|_project_b
+    |_parent
+      |_childb
+        |_module_b.py
+B. 运行main.py 要调用 module_a.py 中的some_function, 直接from project_a.parent.childa.module_a import some_function即可
+D. module_a.py 中要调用module_b.py 的函数some_function,需要先保证"/sample_project"在sys.path中,才能使用from project_b.parent.childb.module_b import some_function
+BD
+
+
 以下关于模块说法正确的是（多选）	
 A. 运行时会从指定的目录搜索导入的模块，如果没有，会报错异常
 B. 模块文件的扩展名不一定是.py
 C. 任何一个普通的xx.py文件可以作为模块导入
 D. 一个xx.py就是一个模块"	ABC
-"假设‘temp.txt’文件保存内容helloworld，则下面代码输出
+
+
+假设‘temp.txt’文件保存内容helloworld，则下面代码输出
 with open('temp.txt', 'rb') as fr: 
     print(fr.read(5)) 
     print(fr.read())"	
@@ -2041,6 +2098,7 @@ helloworld
 D.
 hello 
 w"	A
+
 Python打开文件的模式，正确的是（多选）	
 A. 只读r
 B. 追加写 a
@@ -2054,7 +2112,9 @@ A. True, True
 B. True, False
 C. False, False
 D. False, True"	B
-"def deco_a(func): 
+
+
+def deco_a(func): 
     def wrapper(*args, **kwargs): 
         print('deco_a') 
         func(*args, **kwargs) 
@@ -2074,11 +2134,41 @@ def test():
     print('function running') 
  
 test()
-"		"deco_a 
+"""
+deco_a 
 function running 
-deco_b"
+deco_b
+"""
+
+
+
+def decorate_function_a(function):
+    def inner_function():
+        print("decorate a running...")
+        function()
+    return inner_function
+
+def decorate_function_b(function):
+    def inner_function():
+        function()
+        print("decorate b running..")
+    return inner_function
+    
+@decorate_function_a 
+@decorate_function_b 
+def sample_function():
+    print('sample function running.')
+
+if __name__ == "__main__":
+    sample_function()
+"""
+decorate a running...
+sample function running.
+decorate b running..
+"""
+
 		
-"在以下Python代码中，哪个函数可以被当做装饰器使用
+在以下Python代码中，哪个函数可以被当做装饰器使用
 def test1(x): 
     def test11(): 
         print('Decorated') 
@@ -2095,7 +2185,9 @@ A. p
 B. test1
 C. test11
 D. test2"	B
-"选项中对以下代码，说法正确的有（多选）
+
+
+选项中对以下代码，说法正确的有（多选）
 class Person(object): 
     def __init__(self, birth_year): 
         self._birth_year = birth_year 
@@ -2121,7 +2213,10 @@ print(person.birth_year)
 的打印结果为2010
 C. print(person.__dict__) 的打印结果是 {'_birth_year': 2000}
 D. print(person.birth_year) 的结果为 2000"	ACD
-"class Parrot: 
+
+
+
+class Parrot: 
     def __init__(self): 
         self._voltage = 10000 
  
@@ -2142,18 +2237,25 @@ D. print(person.birth_year) 的结果为 2000"	ACD
 p = Parrot() 
 del p.voltage 
 p.voltage = -1 
-print(p.voltage)"		ValueError: Invalid voltage value
+print(p.voltage)   # ValueError: Invalid voltage value
+
+
+
 我们日常针对面向对象类成员的getter、setter方法写法，在Python中被认为是更加'Pythonic'的优雅写法是：	
 A. 类公有变量写法；
 B. 生成器写法；
 C. 迭代器写法；
 D. @property写法"	D
+
+
 下列有关装饰器的用法，错误的是	
 A. property装饰器可以用来规范属性访问，常用来限制对属性的访问（getter）和设置（setter）
 B. classmethod装饰器对应的函数不需要实例化，不需要self参数，但第一个参数需要时表示自身类的cls参数，可以用来调用类的属性，类的方法，实例化对象等；
 C. staticmethod装饰器对应的函数不需要实例化，不需要self/cls参数，就跟使用普通函数一样
 D. 多装饰器叠加在一个函数上，执行这个函数时，最内部（最靠近函数）的装饰器最先被调用"	D
-"class ListMetaclass(type): 
+
+
+class ListMetaclass(type): 
     def __new__(cls, name, bases, attrs): 
         print(name) 
         print(bases) 
@@ -2179,8 +2281,13 @@ DefinedList
 D.
 ListMetaclass 
 (<class 'type'>,)"	C
-"如果想要得到下面输出，则在“__#待填”填写下面哪些代码（多选）注意，题可能不对!!!
-输出Call ... 20 Call ... 20
+
+
+如果想要得到下面输出，则在“__#待填”填写下面哪些代码（多选）注意，题可能不对!!!
+输出
+Call ... 20 
+Call ... 20
+
 class Property: 
     def __init__(self, function, **kwargs): 
         self.function = function 
@@ -2219,8 +2326,9 @@ E.
 result = self.function(instance) 
 type(instance).__dict__[self.function.__name__] = result 
 return result
-"	BCD
-"class Foo: 
+BCD
+
+class Foo: 
     def __init__(self, name): 
         self._name = name 
     def __str__(self): 
@@ -2248,7 +2356,10 @@ True
 D.
 False
 False"	A
-"class Person: 
+
+
+
+class Person: 
     __slots__ = ('name', 'age') 
 person = Person() 
 person.name = 'John' 
@@ -2261,7 +2372,9 @@ B. Kate is from UK
 C. 代码执行会抛出AttributeError
 D. John is from CN
 E. Kate is from CN"	C
-"已有以下代码（多选）
+
+
+已有以下代码（多选）
 class A: 
     x = 0 
     def func(self): 
@@ -2272,7 +2385,10 @@ A.  a.func()
 B.  a.func(a)
 C.  A.func(a)
 D.  A.func(A)"	ACD
-"class Foo: 
+
+
+
+class Foo: 
     count = 0 
  
     def __init__(self): 
@@ -2301,13 +2417,16 @@ bar.incr_three()
 Foo.incr_two() 
 Bar.incr_three() 
 Foo.incr_three()
-"	
+
 A. Foo.count 的值为1
 B. Bar.count 的值为3
 C. foo.count 的值为2
 D. bar.count 的值为1
 E. Foo.count 的值和Bar.count 的值相等"	BDE
-"class Spam(object): 
+
+
+
+class Spam(object): 
     num_instance = 0 
  
     @staticmethod 
@@ -2340,14 +2459,39 @@ C.
 D.
 6 0 0
 1 2 3"	B
+
+
 如下代码，描述正确的是	
-A. 警告: 类方法(classmethod)是类所拥有的方法, 传入的参数应该是cls,而不是self""
-B. 错误: Python没有new关键字, 如需修改new, 如单例模式, 可以重写(override)__new__"",
-C. @property,表示属性, 不是方法, 则不需要加括号(), 直接调用object.man即可"",
-D. 如果想使用基类的成员, 则需要初始化基类,如dummyclass.__init__(self)"",
-E. 类名尽量使用大驼峰"",
-"	ABCDE
-"class A: 
+class DummyClass (object):
+    def __init__(self):
+        self.is_d = True
+        
+class ChildDummyClass(DummyClass) :
+    def __init__(self, isman) :
+        self.isman = isman
+        
+    @classmethod
+    def can_speak(self):
+        return True
+    
+    @property
+    def man(self):
+        return self.isman
+
+if __name__ == "__main__":
+    object = new ChildDummyClass (True)
+    print(object.can_speak())
+    print(object.man ())
+    print(object.is_d)
+A. 警告: 类方法(classmethod)是类所拥有的方法, 传入的参数应该是cls,而不是self
+B. 错误: Python没有new关键字, 如需修改new, 如单例模式, 可以重写(override)__new__,
+C. @property,表示属性, 不是方法, 则不需要加括号(), 直接调用object.man即可,
+D. 如果想使用基类的成员, 则需要初始化基类,如dummyclass.__init__(self),
+E. 类名尽量使用大驼峰,
+ABCDE
+
+
+class A: 
     def __eq__(self, other): 
         return True 
 a = A() 
@@ -2364,8 +2508,10 @@ True
 True
 D.
 Flase
-True"	B
-"class MyClass(): 
+True  B
+
+
+class MyClass(): 
     pass 
  
 myclass = MyClass() 
@@ -2374,31 +2520,40 @@ print(type(myclass))
 yourclass = type('YourClass', (),{}) 
 print(yourclass) 
 print(type(yourclass))
-"		"<__main__.MyClass object at 0x000001E2FCF87B50>
+答案:
+<__main__.MyClass object at 0x000001E2FCF87B50>
 <class '__main__.MyClass'>
 <class '__main__.YourClass'>
 <class 'type'>
-"
-"跟下面代码同样功能的是
+
+
+
+跟下面代码同样功能的是
 import random 
 random.seed('2021')"	
 A. random.seed(2021, version=2)
 B. random.seed('2021', version=1)
 C. random.seed(b'2021', version=1)
-D. random.seed(bytearray(b'2021'), version=2)"	D
+D. random.seed(bytearray(b'2021'), version=2)	D
+
+
 不属于 time.structtime 时间元祖属性的是	
 A. tm_year
 B. tm_mon
 C. tm_yday
-D. tm_microsec"	D
-"以下代码的输出是
+D. tm_microsec D
+
+
+以下代码的输出是
 from datetime import date 
 print(date(2002, 12, 4))"	
 A. 04-12-2002
 B. Dec 04 2002
 C. 2002-12-04
 D. 2002/12/04"	C
-"输出以下字符串中的所有数字，以下表达式正确的是（多选）
+
+
+输出以下字符串中的所有数字，以下表达式正确的是（多选）
 import re
 x = 'abaax12323ddd'"	
 A.
@@ -2412,7 +2567,9 @@ t = re.match(r""[a-zA-Z]+(\d*)[a-zA-Z]+"", x).group(1)
 print(t)
 D.
 t = re.match(r""[a-zA-Z]+(\d+?)"", x).group(1) 
-print(t)"	ABC
+print(t)	ABC
+
+
 如下代码，哪些能输出123（多选）	
 A.
 import re 
@@ -2439,13 +2596,18 @@ I think 123 is a lucky number.""""""
 result = re.findall('.*?(\d+).*', content) 
 if result: 
     print(result.group(1))
-"	ABC
+ABC
+
+
 关于venv正确的有（多选）	
 A. 可以用来搭建python虚拟环境
 B. 是与CPython不同的另一种解释器
 C. 是官方的标准库
 D. 仅能在linux使用"	AC
-"import asyncio 
+
+
+
+import asyncio 
  
 async def say_hello(delay, msg): 
     await asyncio.sleep(delay) 
@@ -2460,15 +2622,19 @@ async def fun14():
     await task1 
     await task2 
  
-asyncio.run(fun14())"		"hello2 
+asyncio.run(fun14())
+hello2 
 hello1 
 world1 
 world2
-"
+
+
 logging 多线程是否安全	
 A. 是
 B. 否"	A
-		3
+
+
+
 以下关于字符串引号使用符合规范的是（多选）	
 A.
 std_out = \ 
@@ -2483,9 +2649,104 @@ Don't do this.
 """""")
 D.
 std_out = ""This is much nicer. Do it this way."""	BD
-下述哪些选项不符合《华为Python语言编程规范》中“运算符与表达式”这一章节中的要求和建议（多选）		ABC
-下述哪个选项符合《华为Python语言编程规范》中“控制语句”这一章节中的要求和建议		
-关于控制语句，下述哪些选项不符合《华为Python语言编程规范》要求和建议（多选）		
+
+
+
+下述哪些选项不符合《华为Python语言编程规范》中“运算符与表达式”这一章节中的要求和建议（多选）		
+A.
+def func(mydata):
+    if len(mydata) == 0:
+        pass
+    else:
+        pass
+B.
+def func(obj):
+    if obj == None:
+        pass
+    else:
+        pass
+C.
+def func(a):
+    if a == True:
+        pass
+    else:
+        pass
+D.
+def func(obj):
+    if obj:
+        pass
+    else:
+        pass
+ABC
+
+
+下述哪个选项符合《华为Python语言编程规范》中“控制语句”这一章节中的要求和建议 (D)
+A.
+def func(param):
+    if param <= 0:
+        return 0
+    elif 0 <param <=50:
+        return 'B',param
+    else:
+        print('error')
+B.
+def func(param):
+    if param > 0:
+        return True,param
+    elif param == 0:
+        return False
+    else:
+        return None
+C.
+def func(x):
+    if x<0:
+        return x+1
+D.
+def func(x):
+    if x<0:
+        return -1
+    return x+1
+
+
+
+关于控制语句，下述哪些选项不符合《华为Python语言编程规范》要求和建议（多选）	
+A.
+def func(x):
+    if x<0 or x>100:
+        print('error)
+    else 100>x>=90:
+        print('B')
+    elif 80> x >=70:
+        print('C')
+    else:
+        print('B')
+B.
+def fn(x):
+    for i in range(x):
+        if i >4:
+            return i
+    else:
+        print("{} is not greater than 4".format(x))
+
+C.
+def func(x):
+    if a:
+        return a
+    else:
+        raise Exception("Invalid value")
+D.
+over_flag = False
+for i in range(0,5):
+    for j in range(0,3):
+        if j == i:
+            over_flag = True
+            break
+            print('i的值为:%d')
+        if over_flag:
+            break
+BCD
+
+
 以下哪些是不符合控制语句章节规范的（多选）	
 A.
 for i in range(len(my_list)): 
@@ -2499,7 +2760,8 @@ for i, x in enumerate(my_list):
 D.
 for i in range(32): 
     do_something()"	AD
-下述那个选项的代码符合《华为Python语言编程规范》中“变量作用域”章节的要求和建议		
+
+
 下列变量的使用，符合变量作用域一章的规范的是	
 A.
 def fun(): 
@@ -2515,7 +2777,9 @@ C.
 _global = 1 
 def test(): 
     _global = 2"	B
-"有如下模块moduleA，以下在moduleB中引入模块符合规范的是
+
+
+有如下模块moduleA，以下在moduleB中引入模块符合规范的是
 # moduleA.py 
 __all__ = ['ClassA'] 
  
@@ -2540,6 +2804,8 @@ b = moduleA.ClassB()
 D.
 from moduleA import ClassA 
 a = ClassA()"	D
+
+
 linux环境中，为了能够 import 在 /my_path 路径下的包（package），以下做法不符合《华为Python语言编程规范》中“标准库”章节的要求和建议的有（多选）	
 A. 运行代码前，在bash中执行 export PYTHONPATH=$PYTHONPATH: /my_path
 B. 在代码中添加
@@ -2547,11 +2813,14 @@ sys.path.insert(0, './')
 sys.path.insert(0, './my_path')
 C. 在代码中添加 sys.path = ['/my_path']
 D. 在代码中添加 sys.path.insert(0, './my_path')"	BCD
+
+
 data是来自外部未经校验的数据，下列反序列化的操作中，符合序列化的是	
 A. pickle.loads(data)
 B. yaml.load(data)
 C. json.loads(data)
 D. jsonpickle.decode(data)"	C
+
 如下选项不符合《华为Python语言编程规范》中“外部数据校验”章节的要求和建议的是	
 A.
 os.system('sudo rm -f %s' % tmp_file)
@@ -2563,29 +2832,70 @@ os.rmdir(""/tmp/log/%s"" % tmp_dir)
 D.
 tmp_dir = 'abc.tmp' 
 os.rmdir(""/tmp/log/%s"" % tmp_dir)"	A
-以下选项符合《华为Python语言编程规范》 中“外部数据校验”章节的要求和建议的是		
+
+
+以下选项符合《华为Python语言编程规范》 中“外部数据校验”章节的要求和建议的是	C
+A. 
+import subprocess
+def run_cmd(txt_filepath):
+    return subprocess.call('notepad.exe %s'% txt_filepath, shell=True)
+if __name__=="__main__":
+    _out = run_cmd("d:/abc.txt && calc.exe")
+B.
+import subprocess
+def run_cmd(txt_filepath):
+    return subprocess.call('notepad.exe %s'% txt_filepath, shell=False)
+
+if __name__=="__main__":
+    _out = run_cmd("d:/abc.txt && calc.exe")
+C.
+import subprocess
+def run_cmd(txt_filepath):
+    return subprocess.call([notepad.exe', txt_filepath], shell=False)
+
+if __name__=="__main__":
+    _out = run_cmd("d:/abc.txt && calc.exe")
+D.
+import subprocess
+def run_cmd(txt_filepath):
+    return subprocess.call('notepad.exe %s'% txt_filepath)
+
+if __name__=="__main__":
+    _out = run_cmd("d:/abc.txt && calc.exe")
+
+
+
 uniTtest命名规则正确的是	
 A. abc_test
 B. test_abc
 C. abctest
 D. abc"	B
+
+
 1.3.3 {py27,py36}-django{15,16} 的 2 组花括号内各有 2 个值，它们实际可以组合环境		py27-django15、py27-django16、py36-django15、py36-django16
 只用边界分析方法，如下哪些可以作为测试数据（多选）	
 A. 最大值和最小值
 B. 最小值-1
 C. 最大值+1
 D. 默认值"	ABC
-		C
+
+单元测试应该全自动执行,只有完全自动化才有意义
+
 已知漏洞修补结果的验证已融入公司的测试流程，测试工程师在不同的活动阶段需要输出不同交付件不包括	
 A. 补丁测试报告
 B. 产品安全测试方案
 C. 产品功能测试报告
 D. 产品安全测试报告"	C
+
+
 1.3.14 unittest.mock的patch函数下列错误的是	
 A. patch可以作为装饰器
 B. patch作为装饰器不会影响测试用例入参
 C. patch可以与with使用
 D. patch可限制mock的范围在函数或类"	B
+
+
+
 "如下uniTtest的输出结果是
 import unittest 
 class MyTestCase(unittest.TestCase): 
@@ -2611,8 +2921,13 @@ class MyTestCase(unittest.TestCase):
         print(""5"") 
 if __name__ == ""__main__"": 
     unittest.main()
-"		1 2 3 4 5
-"import unittest 
+答案:
+1 2 3 4 5
+
+
+
+
+import unittest 
  
 class testcase(unittest.TestCase): 
     def test_something1(self): 
@@ -2630,14 +2945,18 @@ class testcase(unittest.TestCase):
     def tearDown(self): 
         print(5) 
  
-unittest.main()"		"3
+unittest.main()
+3
 1
 5
 3
 2
 5
-"
-"以下内容，采用路径全覆盖的方法，需要多少测试用例  
+
+
+
+
+以下内容，采用路径全覆盖的方法，需要多少测试用例  
 if(a<b){ 
     if(c == 0){ 
         xxx 
@@ -2647,24 +2966,38 @@ if(a<b){
 }else{ 
     xxx 
 }"		3
+
+
+
 pdb调试myscript.py的命令行	
 A. python3 –m myscript.py
 B. python3 –d myscript.py
 C. python3 –pdb myscript.py
 D. python3 –m pdb myscript.py"	D
+
+
+
 以下可用于Python性能分析的是	
 A. timeit
 B. cProfile
 C. line_Profiler
 D. memory_Profiler"	ABCD
+
+
+
 "list a操作时间复杂度O(n)的是
 "	
 A. a[0]==n,
 B. n not in a
 C. a.count(n) 
 D. a.index(n)"	BC
+
+
+
 双端队列deque(1),extend([2,3]),leftextend([4,5]), 结果是[5,4,1,2,3]		
-"from collections import Iterable,Iterator
+
+
+from collections import Iterable,Iterator
 
 class IterObj:
     def __iter__(self):
@@ -2679,7 +3012,10 @@ A.True,False
 B.True,True
 C.False,True
 D.False,False"	A
-"from collections import deque
+
+
+
+from collections import deque
 
 dq = deque([1])
 dq.extend([2,3])
@@ -2689,18 +3025,25 @@ A.[[5,4],1,[2,3]]
 B.[4,5,1,2,3]
 C.[[4,5],1,[2,3]]
 D.[5, 4, 1, 2, 3]
-"	D
-"y = 1
+D
+
+
+
+y = 1
 f = lambda x: x + y + 1
 y = 0
-print(f(1)) # 2"		
-"x,y,z = (1,2,3,4,5,6,7)[2::2]
-print(y)"	
+print(f(1)) # 2
+
+
+x,y,z = (1,2,3,4,5,6,7)[2::2]
+print(y)
 A.6
 B.4
 C.3
 D.5"	D
-"def deco(f):
+
+
+def deco(f):
     def inner():
         inner.co += 1
         f()
@@ -2715,8 +3058,12 @@ def func():
 func()
 func()
 func()
-print(func.co)  # 3"		
-"dt = datetime.datetime(2022,2,22)
+print(func.co)  # 3	
+
+
+
+
+dt = datetime.datetime(2022,2,22)
 dt1 = datetime.timedelta(4)
 
 print(dt+dt1)"	
@@ -2724,7 +3071,11 @@ A.2022-02-22 00:00:00
 B.2026-02-22 00:00:00
 C.2022-02-22 04:00:00
 D.2022-02-26 00:00:00"	D
-"from multiprocessing import Process, Pipe
+
+
+
+
+from multiprocessing import Process, Pipe
 
 def f(conn):
     conn.send('hello world')
@@ -2735,8 +3086,11 @@ if __name__ == '__main__':
     parent_conn, child_conn = Pipe()
     p = Process(target=f, args=(child_conn,))
     print(parent_conn.recv())   # ""hello world""
-"		
-"class Foo:
+
+
+
+
+class Foo:
     def __init__(self, val):
         self._val = val
 
@@ -2756,6 +3110,10 @@ A.3,1
 B.3,3
 C.3,5
 D 1,5"	B
+
+
+
+
 如下哪些是int类型：	
 A 0b1011
 B 0xacd
@@ -2764,21 +3122,30 @@ D float(3)"	ABC
 
 A = [""HELLO""]
 print(""第一个值{0[0]}，第二个值{0[2]}"").format(a)"		第一个值H，第二个值L
-有一道while中加了sleep(5)的，还有print(end)		"T-minus 3
+
+
+
+有一道while中加了sleep(5)的，还有print(end)		"
+T-minus 3
 T-minus 2
 T-minus 1
 end"
-"listA = [1,2,3,4]
+
+
+
+
+listA = [1,2,3,4]
+filter(lambda i: i%2 for i in listA)  # [1, 3]
+
+
+listA = [1,2,3,4]
 求 [i if x%2 == 0 else i*i for x in listA]的结果"		[1, 2, 9, 4]
-有Pip, Process，parent, children的一个输出题	"hello world'
-['hello world', 'hello world again']
-'hello world again'
-产生异常"	hello world'-恒瑞答案
-"listA = [1,2,3,4]
-filter(lambda i: i%2 for i in listA)"	"[1, 3]
-None
-[0, 1, 2, 3]
-[0, 2]"	[1, 3]
+
+
+有Pip, Process，parent, children的一个输出题	
+hello world'-恒瑞答案
+
+
 
 A=[1,2,3,4,5]
 b=a
@@ -2787,10 +3154,17 @@ c = a.copy()
  `4404896968 4404896968`
 `4404896904 4404896968`
 `4404896904 4404896904`"	4404896968 4404896904
+
+
+
 如下说写法正确的是	"判断tuple内容是否为空： if my_tuple is ()
 比较两个list内容是否相同：if list1 is list2
 比较两个tuple的内容是否相同：if tuple1 == tuple
 比较两个时间是否相等：if time1 is time2"	if tuple1 == tuple
+
+
+
+
 如下条件语句符合编码规范的是？	
 A、
 def sample_sort_list(sample_inst):
@@ -2812,16 +3186,24 @@ sample_sort_list(fake_list)
 D、
 if isinstance(var[3], int) or isinstance(var[3], float):
     pass"	D
-"extend是右合并，leftextend是左合并
+
+
+
+
+extend是右合并，leftextend是左合并
 a = [1]
 b = [2,3]
 c = [4,5]
 a.extend(b)
 b.leftextend(c)  
-问a是多少"	"[5, 4, 1, 2, 3]
+问a是多少 
+[5, 4, 1, 2, 3]
 [4, 5, 1, 2, 3]
 [[5, 4], 1, [2, 3]]
-[[4, 5], 1, [2, 3]]"	A
+[[4, 5], 1, [2, 3]] 	A
+
+
+
 如下哪些结果输出是-9.54	
 A、
 print(Decimal('-9.545').quantize(Decimal('0.01'), rounding=ROUND_HALF_EVEN))
@@ -2831,6 +3213,9 @@ C、
 print(Decimal('-9.545').quantize(Decimal('0.01'), rounding=ROUND_UP))
 D、
 print(Decimal('-9.545').quantize(Decimal('0.01'), rounding=ROUND_FLOOR))"	AB
+
+
+
 下列代码能输出[0,1,2,3,4]的是	
 A、
 print([0, 1, 2, 3, 4])
@@ -2846,6 +3231,9 @@ x = []
 for i in range(0, 4):
     x.append(i)
 print(x)"	AC
+
+
+
 设置断点后，能停留在print语句前面的是哪些代码？	
 A、
 def say():
@@ -2897,6 +3285,10 @@ D
 x = 1
 ls = [x for x in range(10)]
 print(x)"	ABD
+
+
+
+
 编程规范题，如下哪些是在解压文件前必须要做的安全检查？	
 A
     total_size = sum(info.file_size for info in src_file.infolist())
@@ -2914,7 +3306,11 @@ C
 D
     if oct(os.stat(zip_file).st_mode)[-3:] > '640':
         raise IOError(f'zipfile({zip_file}) permission is not right')"	ABC
-"package结构如下
+
+
+
+
+package结构如下
 package
 subpackage1
     -moduleX
@@ -2931,6 +3327,10 @@ C
 from . import moduleY
 D
 from ..moduleA import xxx"	ABC？
+
+
+
+
 测试代码中不符合断言规范的是：	
 A、
 import unittest

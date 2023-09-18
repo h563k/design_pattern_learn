@@ -1,7 +1,3 @@
-def func(x):
-    x = yield x
-    x = yield x
 
-m = func(3)
-for x in m:
-    print(x, end='') # 3None
+listA = [1,2,3,4]
+filter(lambda i:i%2 for i in listA)
