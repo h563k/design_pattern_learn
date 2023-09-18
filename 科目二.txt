@@ -438,10 +438,16 @@ C. foo_2
 D. foo_3"	C
 
 下面代码不符合华为规范的是	
+items = ["1223",12,"1234",412]
+items = [item for item in items if type(item) == str]
+if items != []:
+    do_something(items)
+
 A. 第1行
 B. 第2行
 C. 第3行
 D. 第4行"	BC
+
 "entities中的对象，只会被遍历一次，且不需要长期持有（B）
 class Entity
     def __init__(self, eid=0)
@@ -458,6 +464,7 @@ D.
 entities = [None] * 1000
 for i in range(1000):
 entities.append(Entity(i))"	B
+
 "进入pdb调试模式后，下列说法正确的是：( C )
 import sys
 import os
@@ -473,30 +480,58 @@ A.进入pdb调试模式后，代码执行位置会停在func2()这一行
 B.进入pdb调试模式后，代码执行位置会停在x=1这一行
 C.进入pdb调试模式后，代码执行位置会停在import sys这一行
 D.进入pdb调试模式后，代码执行位置会停在def func1()这一行"	C
+
 以下哪项不适合写在注释中	
 A、变更记录
 B、性能瓶颈
 C、设计原理
 D、线程是否安全"	A
+
 使用UDP协议通信时，需要使用哪个类把要发送的数据打包?	
 A. SocketCmt
 B. DatagramSocket
 C. DatagramPacket
 D. ServerSocket"	C
+
 下述哪个选项的代码符合《华为Python语言编程规范》 中“变量作用域”章节的要求和建议		BD
+A.
+def func():
+    global acc
+    acc = 2
+B.
+_acc = 1
+def func():
+    print(_acc)
+func()
+C.
+_acc = 1
+def func():
+    global _acc
+    print(_acc)
+func()
+D.
+_acc = 1
+def func():
+    global _acc
+    _acc = "None"
+func()
+print(_acc)
+
 下面调用库方法不正确的是	
 A. from os import path
 B. import importlib
     path = importlib.import_module('os.path')
 C. import os.path
 D. path = __import__('os.path')"	D
-"虚拟魂晶管理工具tox的多版本兼容测试,配置如下:
+
+虚拟环境管理工具tox的多版本兼容测试,配置如下:
 [tox]
 envlist = {py36,py27}-django15"	
 A.表示1个环境,使用python3.6或者python2.7
 B.表示2个环境,py27-django15环境的python版本只能是python 2.7，py36-django15的python版本只能是python 3.6
 C 
 D表示2个环境, 使 用 python3.6和python2.7，如果后面配置了basepython字段，环境的python版本由basepython指定；否则，由环境名中的pyxx来决定"	D
+
 SQL注入是指后台数据库对用户输入数据的合法性没有判断或者过滤不严，攻击者可以在web页面中插入额外的SQL语句，实现对后台数据库的非法访问操作。以下关于SQL Injection（SQL注入）的说法错误的是哪个？	
 A. SQL Injection安全漏洞可以攻击系统数据库，篡改数据库数据和获取未授权的信息。
 B. SQL Injection可以通过危及客户端安全，来盗取用户个人敏感数据。
