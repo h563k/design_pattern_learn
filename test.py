@@ -1,14 +1,25 @@
-item = ["hello"]
-items = [item] * 3  # 乘 3 之后得到的是一个 3行, 1列的二维数组, 而不是个1行3列的数组
-print(items)  # [['hello'], ['hello'], ['hello']]
-items_1 = item * 3  # 乘 3 之后得到一个 1行, 3列的一维数组
-print(items_1)  # ['hello', 'hello', 'hello']
-items[0][0] = "world"
-print(items)  # [['world'], ['world'], ['world']]
-items_1[0] = "world"
-print(items_1)  # ['world', 'hello', 'hello']
-# print(items[0][1]) # IndexError: list index out of range
-# print(items[0][2]) # IndexError: list index out of range
-print(items[0][0]) # world
-print(items[1][0]) # world
-print(items[2][0]) # world
+import threading,time
+mutex_1 = threading.Lock()
+mutex_2 = threading.Lock()
+def test1():
+    print("in test1 lock1")
+    mutex_1.acquire()
+    time.sleep(3)
+    mutex_2.acquire(timeout = 1)
+    print("in test1 lock2")
+    mutex_1.release()
+def test2():
+    print("in test2 lock2")
+    mutex_2.acquire()
+    time.sleep(3)
+    mutex_1.acquire()
+    print("in test2 lock1")
+    mutex_1.release()
+    mutex_2.release()
+t1 = threading.Thread(target = test1)
+t2 = threading.Thread(target = test2)
+t1.start()
+time.sleep(1)
+t2.start()
+t1.join()
+t2.join()	

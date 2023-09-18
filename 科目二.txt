@@ -937,6 +937,11 @@ time.sleep(1)
 t2.start()
 t1.join()
 t2.join()	
+答案:
+in test1 lock1
+in test2 lock2
+in test1 lock2
+in test2 lock1
 
 importlib.import_module
 一道多选题，包的结构是：
@@ -945,21 +950,21 @@ def func():
     pass
 main.py
 问在main.py里怎样导入a可以使 a.func() 正常运行。这题题目也附了
-importlib.import_module()的官方文档。"	"# A.
+importlib.import_module()的官方文档。
+# A.
 from a import a
 # B
 import importlib.util
-importlib.import_module("
-A.a"")
+importlib.import_module("A.a"")
 # C
 import importlib.util
-a = importlib.import_module("
-A.a"")
-# B
+a = importlib.import_module("A.a"")
+# D
 import importlib.util
-a = importlib.import_module("
-A"")"	AC
-"class A:
+a = importlib.import_module("A"")"	AC
+
+以下代码的输出是
+class A:
     x = ""Hello""
     def __init__(self):
         self.x = ""Hello""
@@ -970,10 +975,14 @@ a = A()
 b = A()
 a.say_bye()
 print(a.x)
-print(b.x)"		"Hello
-Hello"
-"class A:
-    x = ""Hello""
+print(b.x)
+答案:
+Hello
+Hello
+
+以下代码的输出是:
+class A:
+    x = "Hello"
     def __init__(self):
         pass
     @classmethod
@@ -982,10 +991,11 @@ Hello"
 a = A()
 b = A()
 a.say_bye()
-print(a.x)
-print(b.x)"		"Bye
-Bye"
-"class Foo: 
+print(a.x) # Bye
+print(b.x) # Bye
+
+以下代码的输出是
+class Foo: 
     name = 'Foo' 
     def __init__ (self,name): 
         self.name = name 
@@ -1002,8 +1012,12 @@ bar.func()"
 A. Foo
 B. Bar
 C. bar"	B
+
+
 type(type({1,2,3}))		type
-"unittest. TextTestRunner：
+
+以下代码的输出是
+unittest. TextTestRunner：
 A. 可以通过run()来运行unit.TestSuite
 B. 必须与unittest.Testsuite配合使用
 C. 可以独立添加，无需unittest的类配合
