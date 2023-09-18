@@ -912,9 +912,31 @@ del set1[2]"	AB
 setPriority
 原题目记不太清，大概是题目要想提高python运行的优先级该怎么使用setPriority。		选-20
 
-多线程
-是道关于多线程的代码题，代码太长了记不住，看代码的意思应该是有两个线程互相锁，选项是在代码中不同位置的print是否能print出结果，应该是考察线程的上锁，这题我没复习到也做错了(:з」∠)
-代码大概用到了 lock(), release(), start() 等方法，看代码还是挺规范的应该不是什么刁钻的题，原理了解清楚了应该不难。建议复习的时候找点threading的官方文档看看"		
+import threading,time
+mutex_1 = threading.Lock()
+mutex_2 = threading.Lock()
+def test1():
+    print("in test1 lock1")
+    mutex_1.acquire()
+    time.sleep(3)
+    mutex_2.acquire(timeout = 1)
+    print("in test1 lock2")
+    mutex_1.release()
+def test2():
+    print("in test2 lock2")
+    mutex_2.acquire()
+    time.sleep(3)
+    mutex_1.acquire()
+    print("in test2 lock1")
+    mutex_1.release()
+    mutex_2.release()
+t1 = threading.Thread(target = test1)
+t2 = threading.Thread(target = test2)
+t1.start()
+time.sleep(1)
+t2.start()
+t1.join()
+t2.join()	
 
 importlib.import_module
 一道多选题，包的结构是：
