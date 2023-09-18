@@ -1,25 +1,7 @@
-import threading,time
-mutex_1 = threading.Lock()
-mutex_2 = threading.Lock()
-def test1():
-    print("in test1 lock1")
-    mutex_1.acquire()
-    time.sleep(3)
-    mutex_2.acquire(timeout = 1)
-    print("in test1 lock2")
-    mutex_1.release()
-def test2():
-    print("in test2 lock2")
-    mutex_2.acquire()
-    time.sleep(3)
-    mutex_1.acquire()
-    print("in test2 lock1")
-    mutex_1.release()
-    mutex_2.release()
-t1 = threading.Thread(target = test1)
-t2 = threading.Thread(target = test2)
-t1.start()
-time.sleep(1)
-t2.start()
-t1.join()
-t2.join()	
+def func(x):
+    x = yield x
+    x = yield x
+
+m = func(3)
+for x in m:
+    print(x, end='') # 3None

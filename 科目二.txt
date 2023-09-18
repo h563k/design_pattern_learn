@@ -1022,7 +1022,8 @@ A. 可以通过run()来运行unit.TestSuite
 B. 必须与unittest.Testsuite配合使用
 C. 可以独立添加，无需unittest的类配合
 D. 初始化的时候，可以让verbosity = 4"		A（多选的时候加个C）
-"package对module的分层管理
+
+package对module的分层管理
 选安全规范里的正例，每层有个 __init__ 的那个：
 example_sdk
 ├───__init__.py # 定义外部可访问的子包和模块（module）清单
@@ -1033,11 +1034,14 @@ example_sdk
 ├───api # 所有访问层的方法放在api包内
 ├───__init__.py
 │ └───client.py"		
-"pdb的用法，想查看c的值该如何操作
+
+pdb的用法，想查看c的值该如何操作
 原题代码不记得了，大概是定义了一个函数，之后外部调用了这个函数，想查看函数中一个
 变量的值，选项是应该在第几行打断点，然后需要怎么s怎么p"	在第5行设置断点，执行到第5行时，再执行s, 然后执行p c	
+
 测试(a||b) & (c||d)的需要多少个用例，不太确定		
-"问 AA.__init__ 调用了几次，选两次
+
+问 AA.__init__ 调用了几次，选两次
 class AA(): 
     def __init__(self): 
         print("
@@ -1058,35 +1062,46 @@ class DD(BB, CC):
  
 if __name__ == ""__main__"": 
     d = DD()"		2次
+
+
 如果读的文件比内存大怎么办，选项里三个都是直接read, 只有一个是设置了buffer，我选 了设置buffer的这个		
-"import time
+
+以下代码的输出是
+import time
 def task1():
-while True:
-print(""1-before"")
-yield
-print(""1-after"")
-time.sleep(0.5)
+    while True:
+        print("1-before")
+        yield
+        print("1-after")
+        time.sleep(0.5)
+        
 def task2():
-while True:
-print(""2-before"")
-yield
-print(""2-after"")
-time.sleep(0.5)
+    while True:
+        print("2-before")
+        yield
+        print("2-after")
+        time.sleep(0.5)
+        
 t1 = task1()
 t2 = task2()
 for _ in range(0, 2):
-next(t1)
-next(t2)"		"1-before
+    next(t1)
+    next(t2)
+答案:
+1-before
 2-before
 1-after
 1-before
 2-after
-2-before"
-"序列化的规范，题目还挺长，忘记是选正确的单选题还是错误的多选题了，反正只有用
-json 是正确的，用 pickle, _pickle, shelve, yaml, jsonpickle 都是错的 (安全规
-范3.13)"		
+2-before
+
+序列化的规范，题目还挺长，忘记是选正确的单选题还是错误的多选题了，反正只有用json 是正确的，用 pickle, _pickle, shelve, yaml, jsonpickle 都是错的 (安全规
+范3.13)"	
+
 print('6' * 3)		666
-"class Foo(object):
+
+以下代码的输出是
+class Foo(object):
     pass
 
 class Bar(Foo):
@@ -1094,8 +1109,10 @@ class Bar(Foo):
 print(type(Foo()) == Foo)   # True
 print(type(Bar()) == Foo)   # False
 print(isinstance(Foo(), Foo)) # True
-print(isinstance(Bar(), Foo)) # True"		
-"class Base:
+print(isinstance(Bar(), Foo)) # True
+
+以下代码的输出是
+class Base:
     pass
 
 class Derive(Base):
@@ -1105,16 +1122,20 @@ a = Base()
 b = Derive()
 
 print(type(b) == Base) # False
-print(isinstance(b, Derive)) # True"		"False
-True"
-"type的type是type 
+print(isinstance(b, Derive)) # True
+
+以下代码的输出是
+type的type是type 
 type(123)是<class 'int'>
 type(type(123))是<class 'type'>，type是一种特殊的类：元类，用来实例化产生类的类
 print(type(type(type(123)))) #<class 'type'>"		
 
+以下代码的输出是
 A = [1,2,3,4,5]
-print(a[3:8]==a[3:5])"		TRUE
-"class A(object):
+print(a[3:8]==a[3:5]) # TRUE
+
+以下代码的输出是
+class A(object):
     pass
 
 class B(A):
@@ -1124,8 +1145,10 @@ b = B()
 
 print(isinstance(b,A))  # True
 print(isinstance(b,object))  # True
-print(type(B)==type(A))  # True"		
-"def handle(x): 
+print(type(B)==type(A))  # True
+
+以下代码的输出是
+def handle(x): 
     i = 3 
  
 def foo(x): 
@@ -1150,7 +1173,8 @@ print(""%s, %s"" % (foo(['x', 'y']), foo_1(['x', 'y'])))"
 A. y, 3
 B. 3, y
 C. y, y
-D. 3, 3"	A
+D. 3, 3	A
+
 下面代码打印math模块中的pi正确的有（多选）	
 A.
 from math import pi 
@@ -1164,20 +1188,28 @@ print(math.pi)
 D.
 import pi 
 print(pi)"	AB
-"v = [1, 2, 3, 4] 
+
+
+v = [1, 2, 3, 4] 
 y = (x * x for x in v) 
 print(next(y), next(y))"	
 A. 抛出异常
 B. 1 1
 C. 1 2
 D. 1 4"	D
+
+
 迭代器和迭代对象，如下说法正确的是（多选）	
 A. 迭代器一定是可迭代的对象，但可迭代对象不一定是迭代器。
 B. 可迭代对象一定是迭代器，但迭代器不一定是可迭代对象。
 C. 实现了_iter_方法的对象是可迭代对象
 D. 迭代器一定实现了_next_方法"	ACD
-哪些可以作为字典的key? 不变的字符串或者元组均可，list和dict以及set不行。		
-"建议类的多个方法按照如下的顺序组织：
+
+
+哪些可以作为字典的key? 不变的字符串或者元组均可，list和dict以及set不行。	
+
+
+建议类的多个方法按照如下的顺序组织：
 1. __new__ 静态方法
 2. __init__ 方法
 3. __post_init__ 方法
@@ -1186,10 +1218,13 @@ D. 迭代器一定实现了_next_方法"	ACD
 6. @staticmethod 修饰的静态方法
 7. @classmethod 修饰的类方法
 8. 普通方法
-9. 保护方法或私有方法"		
-"有一个单选，选正确的描述AD是关于continue的比较容易排除，B和C比较难以判断，答案选B。
+9. 保护方法或私有方法
+
+有一个单选，选正确的描述AD是关于continue的比较容易排除，B和C比较难以判断，答案选B。
 B是break只能用于循环体内。
-C是goto可以用来跳出多重循环。"		
+C是goto可以用来跳出多重循环。
+
+
 下列哪种记录日志的方式符合《华为Python语言编程规范》中“日志”章节的要求和建议	
 A.
 import logging 
@@ -1207,12 +1242,16 @@ D.
 import logging 
 error_mes = ""This is an error msg."" 
 logging.error(""Here is an error:%s"", error_mes)"	D
+
+
 使用unitest的什么方法能正确运行测试用例	
 A. unitest.main()
 B. unittest.run()
 C. unitest.run_cases()
 D. unitest.test()"	A
-"已知有以下函数
+
+
+已知有以下函数
 def some_function(some_number, some_list): 
     some_number = 2 
     some_list.append(1)
@@ -1221,15 +1260,21 @@ some_number = 1
 some_list = [1, 2, 3] 
 some_function(some_number, some_list) 
 print(some_number, some_list)
+
+
 执行结果打印为"	
 A. 2 [1, 2, 3, 1]
 B. 1 [1, 2, 3, 1]
 C. 2 [1, 2, 3]
 D. 1 [1, 2, 3]"	B
-"def f(a, b=[])  
-Ret = a
-Return len(a.append(b)) "	问 f(1), f(2,[1,1]), f(3)的输出	选择[1,1,1]
-"import copy 
+
+
+def f(a, b=[])  
+    Ret = a
+    Return len(a.append(b)) # 问 f(1), f(2,[1,1]), f(3)的输出	选择[1,1,1]
+
+以下代码的输出是
+import copy 
 def copy_test():
     a = {'x':[1,2,3,4],'u':[123,234]}
     b = a 
@@ -1237,22 +1282,26 @@ def copy_test():
     e = copy.copy(a)
     e['x'][0] = 3
     e['u'] [0]= 234
-    print(id(a)  == id(e))
+    print(id(a)  == id(e)) 
     print(a)
 
-copy_test()"		"False
-{'x': [3, 2, 3, 4], 'u': [234, 234]}"
-"import copy
-a = {"
-A"": [1, 2, 3, 4], ""b"": 123}
+copy_test()
+# False
+# {'x': [3, 2, 3, 4], 'u': [234, 234]}"
+
+以下代码的输出是
+import copy
+a = {"a": [1, 2, 3, 4], "b": 123}
 b = copy.deepcopy(a)
 e = copy.copy(a)
-e["
-A""][0] = 3
-e[""b""] = ""234""
+e["a"][0] = 3
+e["b"] = "234"
 print(id(a) == id(e), end=' ')
-print(a)"		False {'a': [3, 2, 3, 4], 'b': 123}
-"x = 3
+print(a) # False {'a': [3, 2, 3, 4], 'b': 123}
+
+
+以下代码的输出是
+x = 3
 y = 2
  
 def func(y):
@@ -1261,22 +1310,20 @@ def func(y):
     y **= y 
     return x + y
 
+func(y) # 31
 
-func(y) "		31
-"class Vehicle():
+以下代码的输出是
+class Vehicle():
     pass
 class Truck(Vehicle):
     pass
 
-print(isinstance(Truck(), Vehicle))
-print(type(Vehicle()) == Vehicle)
-print(isinstance(Vehicle(), Vehicle))
-print(type(Truck()) == Vehicle)"		"True
-True
-True
-False"
-"#下列哪些无异常，且在执行时不会向上层抛出未捕获的异常？
+print(isinstance(Truck(), Vehicle)) # True
+print(type(Vehicle()) == Vehicle)   # True
+print(isinstance(Vehicle(), Vehicle)) # True
+print(type(Truck()) == Vehicle)       # False 
 
+#下列哪些无异常，且在执行时不会向上层抛出未捕获的异常？
 # A：
 try:
     raise AException
@@ -1299,32 +1346,49 @@ except Exception:
 try:
     raise AException
 except [AException, BException]:
-    pass"		A  C
-"try:
+    pass		
+答案:A  C
+
+以下代码的输出是
+try:
     words = ['a','b']
     int(words[2])
 except IndexError: # 填入代码
     print('catched')
 
-
 # except ValueError, IndexError:
 # except (ValueError, IndexError) as e:
 # except [ValueError, IndexError] as e:
-# except IndexError:"		
-		12
+# except IndexError:
+
+
+以下代码的输出是
+def sumarg(*args):
+    fun1 = lambda *args:sum(args)
+    fun2 = lambda *args:fun1(*args)+fun1(*args)
+    args = [0,1,2,3]
+    return fun2(*args)
+print(sumarg(1,2,3,4))
+    
+输出: 12
 		
-	还考了这个，选这个反例	
+判定覆盖 59 69 79 89 90
 		
-"语文和数学得分的，答案是
+语文和数学得分的，答案是
 XX： 语文：95
-XX：数学：99"		
-"代码运行成功 且 x = {'a','b','c'}
+XX：数学：99	
+
+
+代码运行成功 且 x = {'a','b','c'}
 print(set(['a','b','c']))
 print(set('a','b','c'))
 print(set(('a','b','c')))
 print(set('abc'))"	"可以通过set()来将序列和字典转换为集合。
 使用set()将字典转换为集合时，只会包含字典中的键。"	ACD
-"控制语句的规范
+
+float('230'*2) # 230230.0
+
+控制语句的规范
 if语句中的表达式应清晰直接，并且建议不超过3个，可以根据具体逻辑决定。
 反例：
 if activity.is_active and activity.remaining > 10 and \
@@ -1335,26 +1399,41 @@ is_activity_valid = activity.is_active and activity.remaining > 10
 is_user_valid = user.is_active and (user.sex == 'female' or user.level > 3)
 
 if is_activity_valid and is_user_valid: # 此处的逻辑应清晰直接，建议在同一抽象层次上，不要陷入细节
-user.add_coins(1024)"		
+user.add_coins(1024)"	
+
+# 魔法函数先执行__new__ 再执行__init__
+class Mycls:
+    def __new__(cls):
+        print('new')
+        return super().__new__(cls)
+    def __init__(self):
+        print('init')
+
 		
-"n = [1,2]
+n = [1,2]
 v = n 
 v[0] = 3
-print(n, v)"		[3, 2] [3, 2]
-"t1 = (1,2)
+print(n, v) # [3, 2] [3, 2]
+
+t1 = (1,2)
 t2 = t1*2
 t3 = t1 + t2 
-print(t3)"		(1, 2, 1, 2, 1, 2)
-"def func():
+print(t3) # (1, 2, 1, 2, 1, 2)
+
+
+def func():
     name = 'LiLei'
     print(name,end = ',')
 
-print(name)"		"Traceback (most recent call last):
-  File ""D:\codehub\solution\solution-test\testcase\dorado\cases\anti_ransomware\temp.py"", line 862, in <module>
-    print(name)
+print(name)
+""" 
 NameError: name 'name' is not defined"
+"""
+
 print(int('1'+'2')+3)		15
-"class Foo():
+
+以下代码的输出是
+class Foo():
     @property 
     def x(self):
         return 10
@@ -1367,8 +1446,11 @@ print(int('1'+'2')+3)		15
 
 my_foo_object = Foo()
 my_foo_object.y = 30 
-print(my_foo_object.y - my_foo_object.x)"		10
-"class Foo:
+print(my_foo_object.y - my_foo_object.x) # 10
+
+
+以下代码的输出是
+class Foo:
     @classmethod
     def create_one(cls):
         return cls()
@@ -1385,9 +1467,12 @@ bar_two = Bar.create_two()
 
 print(isinstance(bar_one,Bar))
 print(isinstance(bar_two,Bar))
-"		"True
-False"
-"def decorate(func):
+True
+False
+
+
+以下代码的输出是
+def decorate(func):
     def wrapper():
         print('start')
         func()
@@ -1400,27 +1485,41 @@ def show():
 
 print(show())
 print('------------')
-show()"		"
+show()
+"""
 start
 end
 test_result_none
 ------------
 start
-end"
-"def show1():
+end
+"""
+
+以下代码的输出是
+def show1():
     print('show1_test')
-print(show1())"		"show1_test
-None"
-"test.txt文件原内容为 huawei 经如下运行后内容为？
+print(show1())
+输出
+show1_test
+None
+
+
+以下代码的输出是
+test.txt文件原内容为 huawei 经如下运行后内容为？
 with open('test.txt', 'wt') as file:
     file.write('Hello')
-    file.write('World')"	"2023-1-11题目更新
+    file.write('World')"	
+答案: HelloWorld
+
+2023-1-11题目更新
 test.txt文件原内容为 huawei 经如下运行后内容为？
 with open('test.txt', 'r') as file:
     file.write('Hello')
     file.write('World')
-答案应该为：文件为空"	HelloWorld
-"def fun():
+答案应该为：文件为空
+
+
+def fun():
     funs = []
     for i in range(4):
         funs.append(lambda x: x+i)
@@ -1428,7 +1527,9 @@ with open('test.txt', 'r') as file:
 lams = fun()
 result = [lams[i](i) for i in range(4)]
 print(result)"		[3, 4, 5, 6]
-"def func():
+
+
+def func():
     for i in range(5):
         yield i
 a = func()
@@ -1436,11 +1537,14 @@ b = func()
 print(next(a))
 print(next(b))
 print(next(a))
-print(next(b))"		"0
+print(next(b))
+答案:
+0
 0
 1
-1"
-"class Spam(object):
+1
+
+class Spam(object):
     m = 0
     def __init__(self):
         Spam.m += 1 
@@ -1448,9 +1552,11 @@ print(next(b))"		"0
 class Sub(Spam):
     m = 0
 sub = Sub()
-print(sub.m, Spam.m, Sub.m)"		0 1 0
-"test.py文件中内容如下
-""""""
+print(sub.m, Spam.m, Sub.m) # 0 1 0
+
+
+test.py文件中内容如下
+"""
 __all__  = ['A']
 class A:
     def __init__(self):
@@ -1458,7 +1564,7 @@ class A:
 class B:
     def __init__(self):
         self.name = 'b'
-""""""
+"""
 #如下两份代码的输出情况分别是什么？
 
 from test import A,B 
@@ -1466,8 +1572,10 @@ from test import A,B
 #from test import *
 a = A()
 b = B()
-print('{0},{1}'.format(a.name, b.name))"		a,b
-"如下可能打印内容
+print('{0},{1}'.format(a.name, b.name)) # a,b
+
+
+如下可能打印内容
 import random 
 
 class RandomPrint():
@@ -1479,43 +1587,56 @@ class RandomPrint():
         return 1 
 
 print(list(RandomPrint()))
-#[],[1],[1,1]..."		随机的，可能是[],[1],[1,1]…
-"x=['a','b'],如下哪些代码可以将x变为['a','b','c','d']
+#[],[1],[1,1]...  # 随机的，可能是[],[1],[1,1]…
+
+
+x=['a','b'],如下哪些代码可以将x变为['a','b','c','d']
 x = ['a','b']
 print(x)"	"x.extend(['c','d'])
 x.append(['c','d'])  # ['a', 'b', ['c', 'd']]
 x += ['c','d']
 x += 'cd'"	ACD
-"哪些返回 [0,'foo']
+
+
+哪些返回 [0,'foo']
 arr = [1,2,[3.1,[4.1,0,'foo'],2],'bar']"	"print(arr[2][1][1:])
 print(arr[2][-2][1:])
 print(arr[2][1][1:2])
-print(arr[-2][1][1:3])"	ABD
-"好的开发者测试可以带来什么价值？
-"	
+print(arr[-2][1][1:3]) # ABD
+
+
+好的开发者测试可以带来什么价值？	
 A 给前端提高效率
 B 直接提高产品售价  
 C 减少后端遗留问题
-D 降低维护成本"	ACD
-"以下路径符合‘文件’章节要求的？
-"	"#A path = os.getcwd() + '/myDirectory'
+D 降低维护成本 # ACD
+
+
+以下路径符合‘文件’章节要求的？
+#A path = os.getcwd() + '/myDirectory'
 #B path = os.getcwd() + '/' + myDirectory'
 #C path = os.getcwd() + os.sep + file_name 
-#D path = os.path.join(os.getcwd(),'myDirectory')"	CD
-哪些可以作为字典的key	"#A dict(foo=1,bar=2)
-#B ['foo','bar']
+#D path = os.path.join(os.getcwd(),'myDirectory') # CD
+
+
+哪些可以作为字典的key	
+A dict(foo=1,bar=2)
+B ['foo','bar']
 C (3+2j)
 D ('foo','bar')
 E 'foo'
-# F {1,2,3}
-G 1,2,3  # 元组形式"	CDEG
-"哪一项正确 
-"	
+F {1,2,3}
+G 1,2,3  # 元组形式	CDEG
+
+哪一项正确 	
 A、1<<2>>2（结果1）
 B、1>>2<<2（结果1）
 C、False<<1（结果False）
 D、True<<1（结果True）"	AB
-"foo = 1
+
+
+以下代码的输出是
+foo = 1
 
 def test(bar):
     global foo
@@ -1528,23 +1649,29 @@ def test(bar):
     return foo
 
 test(100)
-print(foo)"		1
-"哪个选项打印出0：
+print(foo) # 1
+
+
+哪个选项打印出0：
 class A:
     pass
 
-a = A()"	
+a = A()
 A、a.__a__x
 B、a._a__x
 C、a._A__x
 D、a.__x"	D
+
+
 以下哪个可以输出s为三个’a’,’b’,’c’的集合set（多选）	
 A．s = set ([’a’,’b’,’c’])
 B. s = set(‘abc’)
 C. s = {(’a’,’b’,’c’)}
 D. s= {‘a’, ‘b’, ‘c’}
 E. s = (‘a’, ‘b’, ‘c’)"	ABDE
-"以下代码打印
+
+
+以下代码打印
 x = (""1"",
      ""22"",
      ""333"")
@@ -1555,16 +1682,13 @@ y = (""1""
 z = '''1
 22'''
 
-print(x)
-print(y)
-print(z)
-print(len(x), len(y), len(z))"		"('1', '22', '333')
-122333
-1
-22
-3 6 4"
-"下面能够输出'ababab'的是：
-"	
+print(x) # ('1', '22', '333')
+print(y) # 122333
+print(z) # 1 \n 22
+print(len(x), lenn(y), len(z)) # 3 6 4
+
+
+下面能够输出'ababab'的是：
 A、
 a = ['a', 'b']
 a.extend(a)
@@ -1581,9 +1705,13 @@ print(''.join(a*3))
 D、
 a = ['a', 'b']
 print(''.join(a)*3)"	CD
-"lan = u'中文'
+
+
+lan = u'中文'
 print(len(lan), hasattr(lan, ""encode""))"		2 True
-"class B(Exception):
+
+
+class B(Exception):
     pass
 
 class C(B):
@@ -1603,13 +1731,14 @@ for cls in [B, C, D]:
     except D:
         res.append('D')
 
-print(''.join(res))"		BBB
-"class Test:
+print(''.join(res)) # BBB
+
+
+class Test:
     def foo(self, seq=[]):
         seq.sort()
-        # 字符串排序"
-A"" > ""N""
-        seq.append(""End"")
+        # 字符串排序"A"> "N"
+        seq.append("End")
         print(seq)
 
 test_1 = Test()
@@ -1619,25 +1748,32 @@ test_2 = Test()
 test_2.foo()
 
 test_3 = Test()
-test_3.foo([""Name"", "
-Age""])
+test_3.foo(["Name", "Age"])
 
 test_4 = Test()
-test_4.foo()"		"# ['End']
+test_4.foo()"		
+# ['End']
 # ['End', 'End']
 # ['Age', 'Name', 'End']
-# ['End', 'End', 'End']"
-"def func(x):
+# ['End', 'End', 'End']
+
+
+def func(x):
     x = yield x
     x = yield x
 
 m = func(3)
 for x in m:
-    print(x, end='')"		3None
-"S = [3, 1, 4, 5]
+    print(x, end='') # 3None
+
+
+S = [3, 1, 4, 5]
 A = sorted(S, reverse = True)
-print(A)"		[5,4,3,1]
-"答案不确定
+print(A) # [5,4,3,1]
+
+
+
+答案不确定
 
 If A+B > 100 THEN
 
@@ -1653,22 +1789,31 @@ IFEND"	"条件覆盖最少需要几个用例？判定覆盖呢？
 A．1, 3
 B. 1, 2
 C. 2, 2
-D. 2, 3"	
-"字典dict = {'a': 1, 'b': 2, 'c':3}
+D. 2, 3
+
+
+字典dict = {'a': 1, 'b': 2, 'c':3}
 print(dict{key.super(),for key, value in dict.items()} ，输出：A
 
 A、dict{‘A’: 1, ‘B’: 2, ‘C’: 3}
-B、dict{‘a’: 1, ‘b’: 2, ‘c’:3}"		
-"TEST1 = [ ‘A’,  ‘B’,‘C’,  ‘D’]
+B、dict{‘a’: 1, ‘b’: 2, ‘c’:3}
+
+
+
+TEST1 = [ ‘A’,  ‘B’,‘C’,  ‘D’]
 TEST2 = (‘A’,  ‘B’,  ‘C’,‘D’)
 符合华为节省内存空间要求的是（具体记不清，列表和元组）：B
 A． TEST1
 B． TEST2
 C． TEST1 和 TEST2
-D． 都不符合"		
+D． 都不符合
+
+
 print('a' if 'b' else 'c') 		a
 print([i for i in range(0,5)])		[0, 1, 2, 3, 4]
-"class Demo:
+
+
+class Demo:
     def __check(self):
         return ""demo check""
 
@@ -1682,20 +1827,25 @@ class Demo1(Demo):
 
 
 Demo().display()  # demo check
-Demo1().display()  # demo check"		
+Demo1().display()  # demo check
+
+
 下面哪些操作可以顺利让表 x = [4, 1, 0, 3, 5]变 x = [4, 1, 3, 5]（多选）	
 A. x[2] = []
 B. del x[2]
 C. x.remove(0)
 D. x[2:3] = []"	BCD
 
-A = [0, 1, 2 ,3 ] 
+
+a = [0, 1, 2 ,3 ] 
 for a[-1] in a: 
-    print( a[-1] )"	
+    print( a[-1] )
 A. 代码出错
 B. 0, 1, 2, 3
 C. 0, 1, 2, 2
 D. xxx"	C
+
+
 现有列表result = [2, 3, ['a', 'b', 'c'], 1]，python3解释器执行result[2].extend('de')后result的值是	
 A.    [2, 3, ['a', 'b', 'c'], 1, 'de']
 B.     [2, 3, ['a', 'b', 'c'], 1, 'd', 'e']
