@@ -1,5 +1,6 @@
 题干	选项	答案
-return A(self.a - other.a) return A(self.a + other.a)
+return A(self.a - other.a) 
+return A(self.a + other.a)
 下列关于python中的闭包，错误的是	
 A. 某个函数被当成对象返回时，夹带了外部变量，就形成了闭包
 B. 闭包常用在装饰器函数中，装饰器需要自定义参数时，一般都会形成闭包
