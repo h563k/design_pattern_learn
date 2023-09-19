@@ -1,4 +1,188 @@
 题干	选项	答案
+
+
+
+class Demo: 
+    def _check(self): 
+        print('Demo') 
+ 
+    def display(self): 
+        return self._check() 
+ 
+class Deriver(Demo): 
+    def _check(self): 
+        print('Deriver') 
+ 
+Demo().display() 
+Deriver().display()
+A.
+Demo
+Demo
+B.
+Deriver
+Deriver
+C.
+Demo
+Deriver
+D.
+Deriver
+Demo
+正确答案：C
+
+
+
+class Spam(object): 
+    num_instance = 0 
+ 
+    @staticmethod 
+    def count(): 
+        Spam.num_instance += 1 
+ 
+    def __init__(self): 
+        self.count() 
+ 
+class Sub(Spam): 
+    num_instance = 0 
+ 
+class Other(Spam): 
+    num_instance = 0 
+ 
+x = Spam() 
+y1, y2 = Sub(), Sub() 
+z1, z2, z3 = Other(), Other(), Other() 
+print(x.num_instance, y1.num_instance, z1.num_instance) 
+print(Spam.num_instance, Sub.num_instance, Other.num_instance)
+A.
+1 1 1
+0 0 0
+B.
+6 0 0
+6 0 0
+C.
+1 2 3
+1 2 3
+D.
+6 0 0
+1 2 3
+正确答案：B
+
+
+
+class Foo: 
+    count = 0 
+ 
+    def __init__(self): 
+        self.count = 0 
+ 
+    def incr_one(self): 
+        self.count += 1 
+ 
+    @staticmethod 
+    def incr_two(): 
+        Foo.count += 1 
+ 
+    @classmethod 
+    def incr_three(cls): 
+        cls.count += 1 
+ 
+class Bar(Foo): 
+    pass 
+ 
+foo = Foo() 
+bar = Bar() 
+foo.incr_one() 
+bar.incr_one() 
+foo.incr_two() 
+bar.incr_three() 
+Foo.incr_two() 
+Bar.incr_three() 
+Foo.incr_three()
+A. Foo.count 的值为1 
+B. Bar.count 的值为3
+C. foo.count 的值为2
+D. bar.count 的值为1
+E. Foo.count 的值和Bar.count 的值相等
+正确答案：BDE
+
+
+
+class Person: 
+    __slots__ = ('name', 'age') 
+person = Person() 
+person.name = 'John' 
+person.name = 'Kate' 
+person.nationality = 'CN' 
+person.nationality = 'UK' 
+print(f"{person.name} is from {person.nationality}")
+A. John is from UK
+B. Kate is from UK
+C. 代码执行会抛出AttributeError
+D. John is from CN
+E. Kate is from CN
+正确答案：C
+
+
+
+如果想要得到下面输出，则在“__#待填”填写下面哪些代码（多选）
+注意，题可能不对!!!
+输出
+Call ... 
+20 
+Call ... 
+20
+代码：
+class Property: 
+    def __init__(self, function, **kwargs): 
+        self.function = function 
+ 
+    def __get__(self, instance, owner): 
+        __ #待填 
+ 
+class Factory: 
+    def __init__(self): 
+        self._x = 10 
+        self._y = 2 
+ 
+    def product(self): 
+        print("Call ...") 
+        return self._x * self._y 
+ 
+    product = Property(product) 
+ 
+f = Factory() 
+print(f.product) 
+del f.product 
+print(f.product)
+A.
+return self.function(instance)
+B.
+result = self.function(instance) 
+instance.__dict__[self.function.__name__] = result 
+return result
+C.
+result = self.function(instance) 
+instance.__setattr__(self.function.__name__, result) 
+return result
+D.
+result = self.function(instance) 
+setattr(instance, self.function.__name__, result) 
+return result
+E.
+result = self.function(instance) 
+type(instance).__dict__[self.function.__name__] = result 
+return result
+正确答案：BCD
+
+
+
+迭代器和迭代对象，如下说法正确的是（多选）
+A. 迭代器一定是可迭代的对象，但可迭代对象不一定是迭代器。
+B. 可迭代对象一定是迭代器，但迭代器不一定是可迭代对象。
+C. 实现了_iter_方法的对象是可迭代对象
+D. 迭代器一定实现了_next_方法
+正确答案：ACD
+
+
 class Next: 
     def __init__(self): 
         self.data = [0, 1, 2, 3, 4, 'b', 'c'] 
