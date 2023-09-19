@@ -1,5 +1,187 @@
 题干	选项	答案
 
+
+以下内容，采用路径全覆盖的方法，需要多少测试用例  3
+if(a<b){ 
+    if(c == 0){ 
+        xxx 
+    }else{ 
+        xxx 
+    } 
+}else{ 
+    xxx 
+}
+正确答案：3
+1.4 调试与定位
+1.4.1 pdb调试myscript.py的命令行
+A. python3 –m myscript.py
+B. python3 –d myscript.py
+C. python3 –pdb myscript.py
+D. python3 –m pdb myscript.py
+正确答案：D
+
+
+
+
+如下uniTtest的输出结果是
+import unittest 
+ 
+class testcase(unittest.TestCase): 
+    def test_something1(self): 
+        print(1) 
+ 
+    def test_something2(self): 
+        print(2) 
+ 
+    def setUp(self): 
+        print(3) 
+ 
+    def some_test(self): 
+        print(4) 
+ 
+    def tearDown(self): 
+        print(5) 
+ 
+unittest.main()
+正确答案：
+3
+1
+5
+3
+2
+5
+
+
+1.3.13 已知漏洞修补结果的验证已融入公司的测试流程，测试工程师在不同的活动阶段需要输出不同交付件不包括
+A. 补丁测试报告
+B. 产品安全测试方案
+C. 产品功能测试报告
+D. 产品安全测试报告
+正确答案：C
+
+
+1.3.14 unittest.mock的patch函数下列错误的是
+A. patch可以作为装饰器
+B. patch作为装饰器不会影响测试用例入参
+C. patch可以与with使用
+D. patch可限制mock的范围在函数或类
+正确答案：B
+
+
+1.3.15 某软件用户注册界面要求输入用户名和密码，用户名和密码限定为7-10位数字和字母的组合，若用等价类划分设计测试用例，则以下哪些符合等价类设计原则（多选）
+A. (用户名, 密码) = (Abc123, abcD1238)
+B. (用户名, 密码) = (!123, 123ABcde)
+C. (用户名, 密码) = (1234Ab, !Ac1234)
+D. (用户名, 密码) = (@123adc, 123iopA)
+正确答案：ABD
+
+
+
+下列有关pylint，正确的说法是（多选）
+A. too many instance attributes 中规定类属性不得多于7个；
+B. too many arguments 告警可通过dict、class等方式来消除；
+C. deprecated-lambda 告警的消除做法是，改用列表推导式来代替map和filter；
+D. 当遍历涉及范围和索引时，尽量使用enumerate替代range；
+正确答案：ABCD
+
+
+1.3.10 在unitest单元测试框架中，通过TextTestRunner类的run方法，提供了丰富的执行策略和执行结果，run()方法的入参可以是如下哪些类的对象（多选）
+A. TestCase
+B. TestSuite
+C. TestRunner
+D. TestResult
+正确答案：AB
+
+
+
+1.3.8 虚拟环境管理工具tox的多版本兼容测试，配置如下（单选）
+[tox] 
+envlist = {py36,py27}-django15
+A. 表示1个环境,使用python3.6或者python2.7
+B. 表示2个环境,使用python3.6和python2.7,
+C.
+D. 表示2个环境,使用python3.6和python2.7,.......py27-django15和py36-django15，如果配置了basepython，python版本由basepython指定，否则由环境名决定
+正确答案：D
+
+
+
+1.3.7 仅允许80、8000、8080端口通过，等价类测试时有效等价类和无效等价类有（）
+A. 4,1
+B. 3,1
+C. 3,2
+D. 4,2
+正确答案：B
+
+
+1.3.6 某系统有三个输入A,B,C，每个输入的取值个数分别为4,6,7，使用EC（单一选择组合）方法设计测试用例，至少需要设计多少个用例
+A. 3
+B. 7
+C. 15
+D. 17
+正确答案：B
+
+
+
+1.3.5 数据组合测试，用例个数最少的是
+A. EC（单一选择组合）
+B. BC（基本选择组合）
+C. AC（全组合）
+D. Pair-wise
+正确答案：A
+
+
+
+1.3.4 代码覆盖率最高的是（单选）
+A. 语句覆盖
+B. 判定覆盖
+C. 条件覆盖
+D. 条件组合覆盖
+正确答案：D
+
+
+
+unitest的什么方法能正确运行测试用例
+A. unitest.main()
+B. unittest.run()
+C. unitest.run_cases()
+D. unitest.test()
+正确答案：A
+
+
+
+下列哪些描述是符合安全编程规范的（多选）
+A. 禁止在日志中保存口令、密钥和其他敏感信息
+B. 禁止使用私有或者弱加密算法
+C. 基于哈希算法的口令安全存储必须加入盐值（salt）
+D. 禁止将敏感信息硬编码在程序中
+E. 禁止使用SSLSocket来进行安全数据交互
+正确答案：ABCD
+
+
+
+str_list为多个字符串的列表，内存最少，不考虑时间，优先使用下面哪种方式
+A.
+return  ''.join(str_list)
+B.
+result='' 
+for i in str_list: 
+    result += i 
+return result
+C.
+buffer = io.StringIO() 
+for i in str_list: 
+    buffer.write(i) 
+return buffer.getvalue()
+D.
+str_tuple = (i for i in str_list) 
+result = '' 
+for i in str_tuple: 
+    result += i 
+return result
+正确答案：B
+
+
+
 entities = (Entity(i) for i in range(1000))
 
 下列哪种记录日志的方式符合《华为Python语言编程规范》中“日志”章节的要求和建议
