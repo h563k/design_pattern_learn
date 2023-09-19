@@ -1,6 +1,160 @@
 题干	选项	答案
 
 
+
+57、 以下哪些选项符合《华为Python语言编程规范》中”异常处理“章节的要求和建议 BD
+A.
+＃自定义的异常类
+class AuthenticationError(BaseException):
+    def __init__(self, message=None):
+        super(AuthenticationError, self).__init__(message)
+        self.http_code = 404
+
+B.
+＃ 自定义的异常类
+class AuthenticationError(Exception):
+    def __init__(self, message=None):
+        super(AuthenticationError, self).__init__(message)
+        self.http_code = 404
+
+C.
+try:
+    with open(file_name) as fd:
+        ...
+    except OSError as e:
+    raise UserDefined.InvalidFile('Please check file name") from e
+
+D.
+try:
+    with open(file_name) as fd:
+        content = fd.read()
+except FileNotfoundError as e:
+    do_something(file_name, e)
+except UnicodeDecodeError as e:
+    do_otherthing(file_name, e)
+
+
+
+以下哪个选项符合《华为Python语言编程规范》 中“异常处理"章节的要求和建议 C
+A.
+try:
+    do_something()
+except SomeException:
+    raise
+except Exception as e:
+    do_something(e)
+B.
+def control_statement_in_finally(param):
+    ret = -1
+    try:
+        ret = / param
+    finally:
+        return ret
+C.
+def control_statement_in_finally (param):
+    ret = - 1
+    try:
+        ret = 1 / param
+    except ZeroDivisionError:
+        do something()
+    finally:
+        do finally()
+    return ret
+D.
+try:
+    fp = open('test read.txt', encoding='utf8')
+    print(fp.read())
+except FileNotFoundError:
+    pass
+except UnicodeDecodeError:
+    pass
+finally:
+    fp.close()
+
+
+a = [0, 1, 2, 3]
+for a[-1] in a:
+    print(a[-1])
+
+答案:
+0
+1
+2
+2
+
+
+def decorate(func):
+    def wrapper():
+        print('start')
+        func()
+        print('end')
+
+    return wrapper
+
+
+@decorate
+def show():
+    return 'show'
+
+
+print(show())
+
+答案:
+start
+end
+None
+
+
+from multiprocessing import Process
+
+nums = [11, 22]
+
+
+def run_p1():
+    for i in range(4):
+        nums.append(i)
+
+
+def run_p2():
+    for i in range(4):
+        nums.append(i)
+    print(nums)
+
+
+if __name__ == "__main__":
+    p1 = Process(target=run_p1)
+    p2 = Process(target=run_p2)
+    p1.start()
+    p1.join()
+    p2.start()
+    p2.join()
+
+答案:
+[11, 22, 0, 1, 2, 3]
+
+
+def func():
+    yield (x for x in range(3))
+
+
+for x in func():
+    print(tuple(x))
+
+答案:
+(0, 1, 2)
+
+
+1、以下代码的运行结果是(）
+
+def func() :
+    yield (x for x in range(3))
+
+for x in func():
+    print(next(x))
+
+答案:
+0
+
 以下内容，采用路径全覆盖的方法，需要多少测试用例  3
 if(a<b){ 
     if(c == 0){ 
