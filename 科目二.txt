@@ -12,6 +12,9 @@ if(a<b){
     xxx 
 }
 正确答案：3
+
+
+
 1.4 调试与定位
 1.4.1 pdb调试myscript.py的命令行
 A. python3 –m myscript.py
