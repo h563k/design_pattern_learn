@@ -1,4 +1,1113 @@
 题干	选项	答案
+
+7、（单选题）下述哪个选项的代码符合《华为Python语言编程规范》中“函数与方法”章节的要求和建议（B）
+
+A、
+
+def fun(arg_0, arg_1='', arg_2=[]):
+    arg_2.append(arg_0)
+    arg_2.append(arg_1)
+    print(arg_2)
+B、
+
+def fun(arg_0, arg_1='', arg_2=None):
+    arg_2 = [] if arg_2 is None else arg_2
+    arg_2.append(arg_0)
+    arg_2.append(arg_1)
+    print(arg_2)
+C、
+
+def fun(arg_0, arg_1='', arg_2={}):
+    arg_2.update({"arg_0": arg_0})
+    arg_2.update({"arg_1": arg_1})
+    print(arg_2)
+D、
+
+def fun(arg_0, arg_1='', arg_2=set()):
+    arg_2.add(arg_0)
+    arg_2.add(arg_1)
+    print(arg_2)
+
+
+6、（单选题）以下代码的输出结果是（ B）
+
+A、460.0
+
+B、230230.0
+
+C、460
+
+D、230230
+
+
+
+
+
+5、（单选题）以下代码的输出结果是（C ）
+
+def func(a, *b):
+    for item in b:
+        a += item
+    return a
+
+
+m = 0
+print(func(m, 1, 1))
+A、0
+
+B、1
+
+C、2
+
+D、产生异常
+
+
+
+4、（多选题）现有numbers = [1, 2, 3]，则以下代码哪些的运行结果是[2]（BD）
+
+
+
+A、
+
+print(list(filter(lambda x: x > 1, numbers)))
+B、
+
+print(list(filter(lambda x: x % 2 == 0, numbers)))
+C、
+
+print(list(filter(lambda x: 2, numbers)))
+D、
+
+print(list(filter(lambda x: (x + 1) % 3 == 0, numbers)))
+
+
+3、（单选题）以下哪个选项符合《华为Python语言编程规范》中“异常处理”章节的要求和建议（C）
+
+
+
+A、
+
+try:
+    do_something()
+except SomeException:
+    raise
+except Exception as e:
+    do_something(e)
+B、
+
+def control_statement_in_finally(param):
+    ret = -1
+    try:
+        ret = 1 / param
+    finally:
+        return ret
+C、
+
+def control_statement_in_finally(param):
+    ret = -1
+    try:
+        ret = 1 / param
+    except ZeroDivisionError:
+        do_something()
+    finally:
+        do_finally()
+    return ret
+D、
+
+try:
+    fp = open('test_read.txt', encoding='utf8')
+    print(fp.read())
+except FileNotFoundError:
+    pass
+except UnicodeDecodeError:
+    pass
+finally:
+    fp.close()
+
+
+2、（多选题）已知：x = [ 4, 1, 0, 3, 5]， 下面哪些表达式操作可以将 x转变为[ 4, 1, 3, 5]（BCD）
+
+
+
+A、
+
+x[2] = []
+B、
+
+del x[2]
+C、
+
+x.remove(0)
+D、
+
+x[2:3] = []
+
+
+1、（单选题）以下代码的执行结果为（ A）
+
+class A:
+    def __new__(self):
+        print("A's __new__() invoked")
+        return object.__new__(self)
+
+    def __init__(self):
+        print("A's __init__() invoked")
+
+
+class B(A):
+    def __new__(self):
+        print("B's __new__() invoked")
+
+    def __init__(self):
+        print("B's __init__() invoked")
+
+
+obj1 = B()
+obj2 = A()
+
+
+A、
+
+B's __new__() invoked
+
+A's __new__() invoked
+
+A's __init__() invoked
+
+B、
+
+B's __new__() invoked
+
+B's __init__() invoked
+
+A's __new__() invoked
+
+A's __init__() invoked
+
+C、
+
+B's __init__() invoked
+
+B's __new__() invoked
+
+A's __init__() invoked
+
+A's __new__() invoked
+
+D、
+
+B's __new__() invoked
+
+B's __init__() invoked
+
+A's __new__() invoked
+
+15、（多选题）以下含有多行的代码，可以正常执行的有（BCD ）
+
+A.
+
+ s = 'a' + 'b'
+     + 'c' + 'd'
+     + 'e' + 'f'
+B.
+
+ s = 'a' + 'b' \
+     + 'c' + 'd' \
+     + 'e' + 'f'
+C.
+
+ s = ('a' + 'b'
+     + 'c' + 'd'
+     + 'e' + 'f')
+D.
+
+ s = 'a' + 'b' \
+     + 'c' + 'd' \
+     + 'e' + 'f' \
+ 
+ # 其他代码
+
+
+14、（多选题）在linux环境中，为了能够import在/my_path路径下的包(package)，以下做法不符合《华为Python语言编程规范》中“标准库”章节的要求和建议的有（BCD）
+
+A.
+
+运行代码前，在bash中执行export PYTHONPATH=$PYTHONPATH:/my_path
+
+B.
+
+在代码中添加
+
+ sys.path.insert(0, './')
+ sys.path.insert(0, './my_path')
+C.
+
+在代码中添加sys.path = ['/my_path']
+
+D.
+
+在代码中添加sys.path.insert(0, '/my_path')
+
+
+
+13、（多选题）有如下的文件结构：
+
+ .
+ ├── test1.py
+ └── tests
+     ├── __init__.py
+     ├── test2.py
+     └── test3.py
+在test2.py中，以下几个包导入操作可以正确执行的有（AB）
+
+A.
+
+from . import test3
+B.
+
+from . import *
+C.
+
+from ..tests import test3
+D.
+
+import test3
+
+
+12、（单选题）以下代码的输出为（A）
+
+
+
+class Foo:
+     def __init__(self, name):
+         self._name = name
+ 
+     def __str__(self):
+         return self._name
+ 
+     def __eq__(self, other):
+         return self is other
+
+
+class Bar(Foo):
+    def __eq__(self, other):
+        return str(self) == str(other)
+
+
+foo = Foo('Hello')
+bar = Bar('Hello')
+print(foo == bar)
+print(bar == foo)
+A、
+
+True
+
+True
+
+B、
+
+True
+
+False
+
+C、
+
+False
+
+True
+
+D、
+
+False
+
+False
+
+
+
+11、（多选题）当前编码环境为UTF-8，对包含汉字的文件进行读取操作，下面的描述，哪些是正确的（AB）
+
+A、
+
+下面代码读取GBK格式的文件会抛出异常
+
+with open(r"D:/file.txt", "r") as fd:
+     data = fd.read()
+B、
+
+下面代码如果可以正常执行，type(data)为str，可以读取文件中所有的内容
+
+with open(r"D:/file.txt", "r") as fd:
+     data = fd.read()
+C、
+
+下面代码读取GBK格式的文件会抛出异常
+
+with open(r"D:/file.txt", "rb") as fd:
+    data = fd.read()
+D、
+
+下面代码如果可以正常执行，type(data)为str，可以读取文件中所有的内容
+
+with open(r"D:/file.txt", "rb") as fd:
+    data = fd.read()
+
+
+10、（单选题）以下代码作为完整程序执行时的输出结果是（B ）
+
+def func(x):
+    x = yield x
+    x = yield x
+
+
+m = func(3)
+for x in m:
+    print(x, end=' ')
+    m.send(0)
+A、3 0
+
+B、3
+
+C、3 None
+
+D、产生异常
+
+
+
+9、（多选题）如下表达式的值为False的有(ACD)
+
+ A、{3, 5, 4} < {4, 3, 5}
+
+ B、{5, 3} < {4, 3, 5}
+
+ C、{3, 5, 4} > {4, 3, 5}
+
+ D、{3, 5, 6} > {4, 3, 5}
+
+
+
+8、（单选题）以下代码的输出结果是（ B）
+
+class Foo:
+    @classmethod
+    def create_one(cls):
+        return cls()
+
+    @staticmethod
+    def create_two():
+        return Foo()
+
+
+class Bar(Foo):
+    pass
+
+
+bar_one = Bar.create_one()
+bar_two = Bar.create_two()
+print(isinstance(bar_one, Bar))
+print(isinstance(bar_two, Bar))
+
+
+A、
+
+True
+
+True
+
+B、
+
+True
+
+False
+
+C、
+
+False
+
+True
+
+D、
+
+False
+
+False
+
+
+36、（单选题）以下包含有装饰器的代码运行结果为（D）
+
+def decorate_function(function):
+def inner(*args, **kwargs):
+inner.co += 1
+return function(*args, **kwargs)
+
+inner.co = 0
+return inner
+
+
+@decorate_function
+def sample_function():
+pass
+
+
+if __name__ == '__main__':
+sample_function()
+sample_function()
+sample_function()
+print(sample_function.co)
+A、
+
+0
+B、
+
+1
+C、
+
+AttributeError: 'function' object has no attribute 'co'
+D、
+
+3
+
+
+35、（单选题）下面的几个删除目录及目录下所有文件的操作中，符合《华为Python语言编程规范》中“代码工程”章节的原则、要求和建议的是（D）
+
+A、
+
+os.system(f"rm -r {dir_name}")
+B、
+
+proc = subprocess.Popen(['rm', '-r', dir_name], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+outs, errs = proc.communicate()
+C、
+
+subprocess.run(['rm', '-r', dir_name])
+D、
+
+shutil.rmtree(dir_name)
+
+
+34、（单选题）如下代码段，输出字符串为“海贝色”的是(D )
+
+DictColor = {"seashell": "海贝色", "gold": "金色", "pink": "粉红色", "brown": "棕色", "purple": "紫色", "tomato": "西红柿色"}
+A、
+
+print(DictColor.keys())
+B、
+
+print(DictColor["海贝色"])
+C、
+
+print(DictColor.values())
+D、
+
+print(DictColor["seashell"])
+
+
+33、（单选题）以下代码的运行结果是（ D）
+
+def decorate(func):
+def wrapper():
+print('start')
+func()
+print('end')
+return wrapper
+
+
+@decorate
+def show():
+return 'show'
+
+
+print(show())
+A、
+
+start
+
+end
+
+show
+
+B、
+
+start
+
+show
+
+end
+
+C、
+
+start
+
+None
+
+end
+
+D、
+
+start
+
+end
+
+None
+
+
+
+32、（单选题）已有变量定义 name = "tom"，则下列表达式中值为字符串"tom"的是（C）
+
+A、
+
+"{name!r}"
+
+
+B、
+
+"{name%r}"
+C、
+
+f"{name!r}"
+D、
+
+f"{name%r}"
+
+
+31、（多选题）下面all函数对字典的操作，输出为True的有（）下面all函数对字典的操作，输出为True的有（BD）
+
+A、
+
+print(all({0: 'True', 1: 'True'}))
+B、
+
+print(all({1: 'False', 2: 'True'}))
+C、
+
+print(all({1: 'True', False: 2}))
+D、
+
+print(all({'0': 'True'}))
+
+
+30、（多选题）下列构造文件路径的方式，符合《华为Python语言编程规范》中“文件”章节的要求和建议的有（BCD ）
+
+A、
+
+import os
+
+
+file_name = 'tmp.txt'
+file_path = os.getcwd() + '\\' + file_name
+B、
+
+import os
+
+
+file_name = 'tmp.txt'
+file_path = os.getcwd() + os.sep + file_name
+C、
+
+from pathlib import Path
+
+
+file_name = 'tmp.txt'
+file_path = Path(Path.cwd(), file_name)
+D、
+
+from pathlib import Path
+
+
+file_name = 'tmp.txt'
+file_path = Path(Path.cwd()) / file_name
+
+
+29、（多选题）以下哪些变量定义语句执行时会产生异常？（CD ）
+
+A、
+
+a = 100, 200, 300
+B、
+
+a = b = c = 10
+C、
+
+a, b = 100, 300, 500
+D、
+
+a = 10 20
+
+
+28、（多选题）以下哪些选项输出结果为True ( AB)
+
+A、
+
+print(2 == 0 or True)
+B、
+
+print(2 != 0 or True)
+C、
+
+print(str(2) and str(0) or True)
+D、
+
+print(str(2) or str(0) or True)
+
+
+27、（多选题）下列哪些选项符合《华为Python语言编程规范》中“类与面向对象”章节的原则、要求和建议（ACD）
+
+A、
+
+class Summation:
+def __init__(self, base):
+self._base = base
+
+def add(self, a: int):
+self._base += a
+B、
+
+class Addition:
+def add(self, a: int, b: int) -> int:
+return a + b
+C、
+
+class Addition:
+ @staticmethod
+def add(a: int, b: int) -> int:
+return a + b
+D、
+
+from abc import ABC, abstractmethod
+
+
+class Base(ABC):
+def __init__(self, base):
+self._base = base
+
+ @abstractmethod
+def cal(self, a, b):
+pass
+
+
+class Addition(Base):
+def cal(self, a, b):
+return a + b
+
+
+26、（单选题）如下代码的打印结果为（B）
+
+from multiprocessing import Process
+
+nums = [11, 22]
+
+def run_p1():
+for i in range(4):
+nums.append(i)
+
+def run_p2():
+for i in range(4):
+nums.append(i)
+print(nums)
+
+if __name__ == '__main__':
+p1 = Process(target=run_p1)
+p2 = Process(target=run_p2)
+p1.start()
+p1.join()
+p2.start()
+p2.join()
+A、
+
+[11, 22]
+B、
+
+[11, 22, 0, 1, 2, 3]
+C、
+
+[11, 22, 0, 1, 2, 3, 0, 1, 2, 3]
+D、产生异常
+
+44、（多选题）以下代码执行完毕后，关于变量的值说法正确的有（BD ）
+
+class Foo:
+count = 0
+
+def __init__(self):
+self.count = 0
+
+def incr(self):
+self.count += 1
+
+ @staticmethod
+def incr_static():
+Foo.count += 1
+
+ @classmethod
+def incr_class(cls):
+cls.count += 1
+
+
+class Bar(Foo):
+pass
+
+
+foo = Foo()
+bar = Bar()
+bar.incr()
+bar.incr_static()
+bar.incr_class()
+A、foo.count的值为1
+
+B、bar.count的值为1
+
+C、Bar.count的值为1
+
+D、Foo.count的值为1
+
+
+
+43、（单选题）有如下几个文件，目录结构及文件内容如下：
+
+.
+├── test1.py
+└── tests
+├── __init__.py
+└── test2.py
+test1.py:
+
+from tests import test2
+
+
+test2.test_2()
+tests/__init__.py:
+
+import test2
+
+
+def test2():
+print('hello python')
+tests/test2.py:
+
+def test_2():
+print('hello world')
+运行test1.py的结果是（C）
+
+A、hello python
+
+B、hello world
+
+C、AttributeError: 'function' object has no attribute 'test_2
+
+D、AttributeError: module 'tests' has no attribute 'test2
+
+
+
+42、（多选题）以下哪些选项符合《华为Python语言编程规范》中“异常处理”章节的要求和建议（BCD）
+
+A、
+
+# 自定义的异常类
+class AuthenticationError(BaseException):
+def __init__(self, message=None):
+super(AuthenticationError, self).__init__(message)
+self.http_code = 404
+B、
+
+# 自定义的异常类
+class AuthenticationError(Exception):
+def __init__(self, message=None):
+super(AuthenticationError, self).__init__(message)
+self.http_code = 404
+C、
+
+try:
+with open(file_name) as fd:
+...
+except OSError as e:
+raise UserDefined.InvalidFile('Please check file name') from e
+D、
+
+try:
+with open(file_name) as fd:
+content = fd.read()
+except FileNotFoundError as e:
+do_something(file_name, e)
+except UnicodeDecodeError as e:
+do_otherthing(file_name, e)
+
+
+41、（多选题）下述哪些选项的说法符合《华为Python语言编程规范》中“变量作用域”章节的原则、要求和建议（ABC）
+
+__all__ = []
+
+_g_type = 1
+
+
+def get_type():
+global _g_type
+return _g_type
+
+
+def set_type(type):
+_g_type = type
+A、get_type函数中的global的使用违反规范
+
+B、set_type函数中的type参数命名违反规范
+
+C、set_type函数中的_g_type的命名违反规范
+
+D、全局变量_g_type的命名违反规范，模块内使用的全局变量不能以下划线开头
+
+
+
+40、（单选题）以下代码会输出什么(B)
+
+d2 = datetime.datetime(5, 6, 7, 8, 9, 10)
+print(d2.year, " Q", d2.month // 4 + 1, sep='')
+参考文档：
+
+datetime(year, month, day, hour=0, minute=0, second=0, microsecond=0, tzinfo=None, *, fold=0)
+The year, month and day arguments are required
+A、
+
+10 Q2
+B、
+
+5 Q2
+C、
+
+5 Q3
+D、
+
+10 Q3
+
+
+39、（单选题）关于下面的代码的输出，正确的是（A）
+
+language = u"中文"
+print(len(language), hasattr(language, "encode"))
+A、
+
+2 True
+B、
+
+4 True
+C、
+
+2 False
+D、
+
+4 False
+
+
+38、（单选题）下述哪个选项的代码符合《华为Python语言编程规范》中“运算符”章节的原则、要求和建议（C）
+
+A、比较两个list内容是否相同：
+
+if list1 is list2:
+B、比较两个时间是否相等：
+
+if time1 is time2:
+C、比较两个tuple的内容是否相同：
+
+if tuple1 == tuple2:
+D、判断tuple内容是否为空：
+
+if my_tuple is ():
+
+
+37、（多选题）如下哪些程序执行能输出attr_name的值（ABD）
+
+A、
+
+class Parent:
+attr_name = 1
+
+
+Foo = type('', (Parent,), {})
+print(Foo.attr_name)
+B、
+
+Foo = type('', (), {'attr_name': 1})
+foo = Foo()
+print(foo.attr_name)
+C、
+
+class Parent:
+attr_name = 1
+
+
+Foo = type('Parent', (), {})
+print(Foo.attr_name)
+D、
+
+class Parent:
+attr_name = 1
+
+
+Foo = type('', (Parent,), {})
+foo = Foo()
+print(foo.attr_name)
+
+
+以下写法符合《华为Python语言编程规范》中关于代码注释缩进的要求和建议的有（CD）
+
+A、
+
+if image_service is not None:
+# Deletes the image if it is in queued or saving state
+self._delete_image(context, image_meta['id'], image_service)
+B、
+
+# get replicate sub system index and net indicator
+repssn_ind = ssn_data[index].repssn_index
+repssn_ni = ssn_data[index].ni
+C、
+
+# get replicate sub system index and net indicator
+repssn_ind = ssn_data[index].repssn_index
+repssn_ni = ssn_data[index].ni
+D、
+
+if image_service is not None:
+# Deletes the image if it is in queued or saving state
+self._delete_image(context, image_meta['id'], image_service)
+
+
+49、（单选题）以下代码运行后的输出是(C )
+
+print(int("1" + "2") + 2)
+A、报错
+
+B、5
+
+C、14
+
+D、32
+
+
+
+48、（单选题）下面代码运行后的输出结果是（A）
+
+class GrandParent:
+def __init__(self):
+print("Hello GrandParent")
+
+
+class Parent(GrandParent):
+def __init__(self):
+super().__init__()
+print("Hello Parent")
+
+
+class Child(GrandParent, Parent):
+def __init__(self):
+super().__init__()
+print("Hello Child")
+
+
+if __name__ == '__main__':
+c = Child()
+A、
+
+Cannot create a consistent method resolution order (MRO) for bases GrandParent, Parent
+B、
+
+Hello GrandParent
+Hello GrandParent
+Hello GrandParent
+Hello Parent
+Hello Child
+C、
+
+Hello GrandParent
+Hello Parent
+Hello Child
+D、
+
+Hello GrandParent
+Hello GrandParent
+Hello Parent
+Hello Child
+
+
+47、（单选题）关于以下代码，说法正确的是（C）
+
+class A:
+a = 42
+b = list(a + i for i in range(10))
+print(b)
+
+
+A()
+A、代码输出为[42, 43, 44, 45, 46, 47, 48, 49, 50, 51]
+
+B、代码输出为[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+C、代码无法执行，存在语法错误，变量a未定义
+
+D、代码能正常执行，但是没有任何输出
+
+
+
+46、（多选题）如果要输出以下字符串中的所有数字，选项中的表达式中正确的有（ABC）
+
+import re
+x = "abaax12323ddd"
+A、
+
+t = re.match(r"[a-zA-Z]+(\d+?)[a-zA-Z]+", x).group(1)
+print(t)
+B、
+
+t = re.match(r"[a-zA-Z]+(\d+)[a-zA-Z]+", x).group(1)
+print(t)
+C、
+
+t = re.match(r"[a-zA-Z]+(\d*)[a-zA-Z]+", x).group(1)
+print(t)
+D、
+
+t = re.match(r"[a-zA-Z]+(\d+?)", x).group(1)
+print(t)
+
+
+45、（多选题）已有以下代码：
+
+class A:
+x = 0
+
+def func(self):
+print(self.x)
+
+
+a = A()
+a.x = 0
+则下列哪些语句可以打印出0（ACD）
+
+A、a.func()
+
+B、a.func(a)
+
+C、A.func(a)
+
+D、A.func(A)
+
+
+class B():
+    def __init__(self):
+        print('B')
+
+
+class A(B):
+    def __init__(self):
+        ____________ # 需填入代码
+
+
+a = A()
+以下哪些选项中的代码单独填入到横线处，可以使得以上代码段输出B（AD）
+
+A、super().__init__()
+B、super().__init__(self)
+C、B.__init__()
+D、B.__init__(self)
+
+
 下述哪个选项符合《华为Python语言编程规范》中“数据模型”章节的要求和建议（D）
 A、
 
