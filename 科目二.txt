@@ -1,6 +1,50 @@
 题干	选项	答案
 
 
+【异常exception】以下哪段代码执行时会正确捕获异常
+A.
+try: 
+    words = ['a', 'b'] 
+    int(words[2]) 
+except [ValueError, IndexError] as e: 
+    pass
+B.
+try: 
+    words = ['a', 'b'] 
+    int(words[2]) 
+except (ValueError, IndexError) as e: 
+    pass
+C.
+try: 
+    words = ['a', 'b'] 
+    int(words[2]) 
+except ValueError, IndexError: 
+    pass
+D.
+try: 
+    words = ['a', 'b'] 
+    int(words[2]) 
+except ValueError: 
+    pass
+正确答案：B
+
+
+
+def divide(denominator, numberator): 
+    try: 
+        return denominator / numberator 
+    except: 
+        return '0' 
+    finally: 
+        return '-1' 
+ 
+print(divide(denominator=2, numberator=1), divide(denominator=2, numberator=0))
+A. 2 0
+B. 2 -1
+C. -1 0
+D. -1 -1
+正确答案：D
+
 
 以下哪个表达式的值为True
 A. 7 // 3.2 * 2 > 2
