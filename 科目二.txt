@@ -1,5 +1,239 @@
 题干	选项	答案
 
+entities = (Entity(i) for i in range(1000))
+
+下列哪种记录日志的方式符合《华为Python语言编程规范》中“日志”章节的要求和建议
+A.
+import logging 
+error_mes = "This is an error msg." 
+logging.error("Here is an error:%s" % error_mes)
+B.
+import logging 
+error_mes = "This is an error msg." 
+logging.error(f"Here is an error:{error_mes}")
+C.
+import logging 
+error_mes = "This is an error msg." 
+logging.error("Here is an error:{}".format(error_mes))
+D.
+import logging 
+error_mes = "This is an error msg." 
+logging.error("Here is an error:%s", error_mes)
+正确答案：D
+
+
+
+如下选项不符合《华为Python语言编程规范》中“外部数据校验”章节的要求和建议的是
+A.
+os.system('sudo rm -f %s' % tmp_file)
+B.
+shutil.rmtree('python/filename')
+C.
+tmp_dir = 'abc' 
+os.rmdir("/tmp/log/%s" % tmp_dir)
+D.
+tmp_dir = 'abc.tmp' 
+os.rmdir("/tmp/log/%s" % tmp_dir)
+正确答案：A
+
+
+以下描述正确的是（多选）
+A. 禁止对不可信来源的数据进行unpickle和load shelf
+B. 将敏感对象发送出信任区域前只需进行签名，不需要进行加密操作
+C. 禁止序列化未加密的敏感数据
+D. 因为shelf依赖于pickle，所以从不可信来源的数据load shelf也是不安全的
+正确答案：ACD
+
+
+
+关于公网地址，下面不正确的是（多选）
+A. httplib.HTTPConnection('www.python.com')
+B. urllib.open('https://www.huawei.com')
+C. ftp=FTP('ftp.debian.org')
+D. test_sites = read_from_file() # 从配置文件中读取，客户资料已备注
+正确答案：ABC
+
+
+linux环境中，为了能够 import 在 /my_path 路径下的包（package），以下做法不符合《华为Python语言编程规范》中“标准库”章节的要求和建议的有（多选）
+A. 运行代码前，在bash中执行 export PYTHONPATH=$PYTHONPATH: /my_path
+B. 在代码中添加
+sys.path.insert(0, './') 
+sys.path.insert(0, './my_path')
+C. 在代码中添加 sys.path = ['/my_path']
+D. 在代码中添加 sys.path.insert(0, './my_path')
+正确答案：BCD
+
+
+
+【变量作用域】下列变量的使用，符合变量作用域一章的规范的是
+A.
+def fun(): 
+    type = 'str' 
+    return type
+B.
+_global = 1 
+def test(): 
+    local_number = 2 
+    if local_number == _global: 
+        raise MyException
+C.
+_global = 1 
+def test(): 
+    _global = 2
+D.
+xxx
+正确答案：B
+
+
+
+【控制语句】以下哪些是不符合控制语句章节规范的（多选）
+A.
+for i in range(len(my_list)): 
+    do_something(my_list[i])
+B.
+for x in my_list: 
+    do_something(x)
+C.
+for i, x in enumerate(my_list): 
+    print(i, x)
+D.
+for i in range(32): 
+    do_something()
+正确答案：AD
+
+
+
+以下关于字符串引号使用符合规范的是（多选）
+A.
+std_out = \ 
+    """This is much nicer. 
+    Do it this way."""
+B.
+print("This is much nicer.\n" 
+      "Do it this way.\n")
+C.
+print("""This is pretty ugly. 
+Don't do this. 
+""")
+D.
+std_out = "This is much nicer. Do it this way."
+正确答案：BD
+
+
+
+下面代码不符合华为规范的是（多选）
+1   items = ["1223", 12, "1234", 412] 
+2   items = [item for item in items if type(item) == str] 
+3   if items != []: 
+4       do_somthing(items)
+A. 第1行
+B. 第2行
+C. 第3行
+D. 第4行
+正确答案：BC
+
+
+
+保护项目未来可维护性的一种理想方式，以下哪些工具可以辅助完成（多选）
+A. Pylint
+B. Flake8
+C. Autopep8
+D. Coverage
+E. Yapf
+F. cProfile
+G. PyGame
+正确答案：ABCDE
+
+
+以下哪种工具能帮你自动检查代码问题，使其符合PEP8规范（多选）
+A. Coverage;
+B. Flake8;
+C. Yapf;
+D. Autopep8;
+正确答案：BCD
+
+
+logging模块提供日志功能，默认情况下，如下哪种说法是正确的
+A. 默认情况下，logging模块将日志打印到屏幕（stdout），日志级别为WARNING级以上的才输出
+
+
+内置函数dir()的作用是
+A. dir()函数不带参数时，返回当前范围内的变量、方法和定义的类型列表；带参数时，返回参数的属性、方法列表。如果参数包含方法__dir__()，该方法将被调用。如果参数不包含__dir__()，该方法将最大限度地收集参数信息。
+
+
+元类，下列描述正确的是（多选）
+A. 元类是类的类，常可以用在类工厂中；
+B. Python中所有的类都是对象，可以通过type()来创建元类；
+C. 在定义类时，可通过metaclass参数来指定此类的元类；
+D. Python类语句执行时，会先查找其类本身的metaclass属性，如果没找到，会继续在父类中找，还没找到，则到模块中找，最后再用内置的type来创建此类对象
+E. 使用类、函数都可以当做元类，通常在new()方法中通过type来自定义自己的元类
+F. 从设计的复杂度来讲，尽量少用元类，多用普通类或函数
+正确答案：ABCDF
+
+
+import asyncio 
+ 
+async def say_hello(delay, msg): 
+    await asyncio.sleep(delay) 
+    print(msg) 
+ 
+async def fun14(): 
+    task1 = asyncio.create_task(say_hello(1, "hello1")) 
+    task2 = asyncio.create_task(say_hello(2, "world1"))  #注，之前这里是1，实际真题应该是2，不过不影响结果 
+ 
+    await say_hello(1, "hello2") 
+    await say_hello(2, "world2")   #注，之前这里是1，实际真题应该是2，不过不影响结果 
+    await task1 
+    await task2 
+ 
+asyncio.run(fun14())
+A.
+hello2 
+hello1 
+world1 
+world2
+
+
+
+【标准库copy】下面代码的输出结果是
+import copy 
+a={"x":[1,2,3,4],"u":123} 
+b=a 
+d=copy.deepcopy(a) 
+e=copy.copy(a) 
+e["x"][0]=3 
+e["u"]=234 
+print(id(a)==id(e),end=' ') 
+print(a,end='')
+正确答案：False {'x': [3, 2, 3, 4], 'u': 123}
+
+
+跟下面代码同样功能的是
+import random 
+random.seed('2021')
+A. random.seed(2021, version=2)
+B. random.seed('2021', version=1)
+C. random.seed(b'2021', version=1)
+D. random.seed(bytearray(b'2021'), version=2)
+正确答案：D
+
+
+【类Class】以下代码输出正确的结果是
+class MyClass(): 
+    pass 
+ 
+myclass = MyClass() 
+print(myclass) 
+print(type(myclass)) 
+yourclass = type('YourClass', (),{}) 
+print(yourclass) 
+print(type(yourclass))
+正确答案：
+<__main__.MyClass object at 0x000001E2FCF87B50>
+<class '__main__.MyClass'>
+<class '__main__.YourClass'>
+<class 'type'>
+
 
 
 class Demo: 
