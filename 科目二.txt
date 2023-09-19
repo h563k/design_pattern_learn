@@ -12,6 +12,14 @@ B、
 
 print(Decimal(3.14))
 C、
+getcontext().prec=2
+print(Decimal(3.14))
+D.
+getcontext().prec=1
+print(Decimal(1)/Decimal(7))
+
+
+
 
 
 
