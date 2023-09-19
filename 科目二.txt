@@ -1,6 +1,22 @@
 题干	选项	答案
 
 
+下述哪些选项的说法符合《华为Python语言编程规范》中"变量作用域“章节的原则、要求和建议 ABC
+_all_=[]
+_g_type = 1
+
+def get_type () :
+    global _g_type 
+    return _g_type
+
+def set_type(type):
+_g_type = type
+
+A. get_type 函数中的 g1obal的使用违反规范
+B. set_type函数中的type参数命名违反规范
+C. set_type 函数中的_g_type 的命名违反规范
+D. 全局变量_g_type的命名违反规范，模块内使用的全局变量不能以下划线开头
+
 
 57、 以下哪些选项符合《华为Python语言编程规范》中”异常处理“章节的要求和建议 BD
 A.
