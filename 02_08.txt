@@ -37,146 +37,67 @@ void CheckSecurity(const vector& people) {
 }
 
 A.
-
 void CheckSecurity(const vector& people) { 
- static const string miscreantDon = "Don"; 
- static const string miscreantJohn = "John"; 
- string found = ""; 
- for (int i = 0; i < people.size(); i++) { 
- if (found.compare("") == 0) { 
- if (people[i].compare(miscreantDon) == 0) { 
- found = miscreantDon; 
- } else if (people[i].compare(miscreantJohn) == 0) { 
- found = miscreantJohn; 
- } 
-
- } 
-
- } 
-
- HandleMiscreant(found); 
-
+	static const string miscreantDon = "Don"; 
+	static const string miscreantJohn = "John"; 
+	string found = ""; 
+	for (int i = 0; i < people.size(); i++) { 
+		if (found.compare("") == 0) { 
+			if (people[i].compare(miscreantDon) == 0) { 
+				found = miscreantDon; 
+			} else if (people[i].compare(miscreantJohn) == 0) { 
+				found = miscreantJohn; 
+ 			} 
+		} 
+ 	} 
+ 	HandleMiscreant(found); 
 }
 
 B.
-
 string FoundMiscreant(const vector& people) { 
-
- static const vector miscreantNames = {"Don", "John"}; 
-
- for (int i = 0; i < people.size(); i++) { 
-
- for (int j = 0; j < miscreantNames.size(); j++) { 
-
-高鹏
-
-30041120
-
-关注
-1
-博文数
-
-34
-总浏览数
-
-0
-总评论数
-
-14069
-博主排行
-
-
-
-更作者的最新博文
-作者没有发表最新博文
-
-
-客服
-
-
-评价
-
-
-展开
-
-
-
-
-
-if (people[i].compare(miscreantNames[j]) == 0) { 
-
- return miscreantNames[j]; 
-
- } 
-
- } 
-
- } 
-
- return ""; 
-
+	static const vector miscreantNames = {"Don", "John"}; 
+	for (int i = 0; i < people.size(); i++) { 
+		for (int j = 0; j < miscreantNames.size(); j++) { 
+			if (people[i].compare(miscreantNames[j]) == 0) { 
+				return miscreantNames[j]; 
+			} 
+		} 
+	} 
+	return ""; 
 } 
 
 void CheckSecurity(const vector& people) { 
-
- string found = FoundMiscreant(people); 
-
- HandleMiscreant(found); 
-
+	string found = FoundMiscreant(people); 
+	HandleMiscreant(found); 
 }
 
 C.
-
 void CheckSecurity(const vector& people) { 
-
- static const string miscreantDon = "Don"; 
-
- static const string miscreantJohn = "John"; 
-
- string found = ""; 
-
- for (int i = 0; i < people.size(); i++) { 
-
- if ((found.compare("") == 0) && (people[i].compare(miscreantDon) == 0)) { 
-
- found = miscreantDon; 
-
- } 
-
- if ((found.compare("") == 0) && (people[i].compare(miscreantJohn) == 0)) { 
-
- found = miscreantJohn; 
-
- } 
-
- } 
-
- HandleMiscreant(found); 
-
+	static const string miscreantDon = "Don"; 
+	static const string miscreantJohn = "John"; 
+	string found = ""; 
+	for (int i = 0; i < people.size(); i++) { 
+		if ((found.compare("") == 0) && (people[i].compare(miscreantDon) == 0)) { 
+			found = miscreantDon; 
+		} 
+		if ((found.compare("") == 0) && (people[i].compare(miscreantJohn) == 0)) { 
+			found = miscreantJohn; 
+		} 
+	} 
+HandleMiscreant(found); 
 }
 
 D.
-
 void CheckSecurity(const vector& people) { 
-
- static const vector miscreantNames = {"Don", "John"}; 
-
- for (int i = 0; i < people.size(); i++) { 
-
- for (int j = 0; j < miscreantNames.size(); j++) { 
-
- if (people[i].compare(miscreantNames[j]) == 0) { 
-
- HandleMiscreant(miscreantNames[j]); 
-
- return; 
-
- } 
-
- } 
-
- } 
-
+	static const vector miscreantNames = {"Don", "John"}; 
+	for (int i = 0; i < people.size(); i++) { 
+		for (int j = 0; j < miscreantNames.size(); j++) { 
+			if (people[i].compare(miscreantNames[j]) == 0) { 
+				HandleMiscreant(miscreantNames[j]); 
+				return; 
+			} 
+		} 
+	} 
 }
 
 4、（单选）无情重构又称童子军原则，指你打开一个代码，如果很难理解，就应该试着去重构
