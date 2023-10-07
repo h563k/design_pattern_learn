@@ -100,336 +100,222 @@ void CheckSecurity(const vector& people) {
 	} 
 }
 
-4、（单选）无情重构又称童子军原则，指你打开一个代码，如果很难理解，就应该试着去重构
-它，你离开的时候代码应该比你来的时候更易懂。但是通常我们由于缺乏足够的知识，不能在无
-情重构中进行复杂的重构，常常以抽取函数为主，但不好的抽取并不能让代码更易理解，反而更
-复杂。那么今天，你打开了下列的代码，可能不清楚具体的业务背景，但请尝试用函数抽取的方
-式进行无情重构。你觉得哪部分代码被抽出去作为一个函数，并不能提升代码的可读性（请忽略
-不同编程语言的规范和语法差异）（C）
+4、（单选）无情重构又称童子军原则，指你打开一个代码，如果很难理解，就应该试着去重构它，你离开的时候代码应该比你来的时候更易懂。但是通常我们由于缺乏足够的知识，不能在无情重构中进行复杂的重构，常常以抽取函数为主，但不好的抽取并不能让代码更易理解，反而更复杂。那么今天，你打开了下列的代码，可能不清楚具体的业务背景，但请尝试用函数抽取的方式进行无情重构。你觉得哪部分代码被抽出去作为一个函数，并不能提升代码的可读性（请忽略不同编程语言的规范和语法差异）（C）
 
+public class Businesssite {
+	private Reading[] readings = new Reading [1000];
+	private static final double START_RATE = 0.09;
+	private static double END_RATE = 0.05;
+	private static int END_AMOUNT = 1000;
 
+	public void addReading (Reading nevReading) {
+		readings [++lastReading) = nevReadino;
+	}
 
-客服
+	private int lastReading;
 
+	public Dollars charge () {
+		Dollars result;
+		int usage = readings[lastReading].getAnount() - readings[lastReading - 1].getinount();
+		if (usage = 0){
+		return nev Dollars (0);
+		}
+		double t1 = START_RATE - ((END_RATE * END_ANOUIT) - START_RATE) / (END _AMOUNT -1)
+		double t2 = ((END RATE * END_ANOUNT)-START_RATE) * Math. min (END_AMOUNT, usage) / 
+		(END_AMOUNT - 1) ;
+		double t3 = Math. max (usage - END_AMOUNT, 0) * END_RATE;
+		result a new Dollars (tl + +2 + t3) ;
+		result = result.plus (new Dollars (usage * 0.0175));
 
-评价
-
-
-展开
-
-
-
-
-
-
-
+		Dollars basel = nev Dollars(result.min(new Dollars(50)). times(0.07))
+		if (result.isGreaterThan(new Dollars(50))) {
+		basel = new Dollars(basel.plus(result.min (new Dollars (75)).minus (
+		nev Dollars(50)).times (0.06)
+		));
+		}
+		if (result.isGreaterThan(new Dollars (75))){
+		basel = new Dollars(basel.plus(result.minus(new Dollars(75)).times(0.05)));
+		}
+		result = result.plus(basel);
+		return result;
+	}
+}
 A.
-
 第19～23行
-
 B.
-
 第15行
-
 C.
-
 第14～24行
-
 D.
-
 第26～34行
 
 5、（单选）根据《身份和访问管理安全设计规范》，以下哪种场景不应该产生安全告警（D）
-
 A.
-
 连续登录认证失败达到系统设定的次数
-
 B.
-
 身份认证凭证即将过期或已过期
-
 C.
-
 敏感功能的开启，比如端口镜像
-
 D.
-
 业务模块加载失败
 
-6、（单选）以下哪种访问控制模式适用于政府、军事等组织分层比较明确、限制比较严格的系
-统（C）
-
+6、（单选）以下哪种访问控制模式适用于政府、军事等组织分层比较明确、限制比较严格的系统（C）
 A.
-
 访问控制列表模式
-
 B.
-
 身份联合模式
-
 C.
-
 多级安全模式
-
 D.
-
 自主访问控制模式
 
 7、（单选）在类图中，哪种关系表达总体与局部的关系（D）
-
 A.
-
 依赖（Dependency）
-
 B.
-
 实现（Realization）
-
 C.
-
 泛化（Generalization）
-
 D.
-
 聚合（Aggregation）
 
-客服
-
-
-评价
-
-
-展开
-
-
-
-
 
-8、（单选）架构师要求需求的分析和设计变更都要加上唯一标识，然后关联用例，体现了需求
-的（C）
-
+8、（单选）架构师要求需求的分析和设计变更都要加上唯一标识，然后关联用例，体现了需求的（C）
 A.
-
 可注释
-
 B.
-
 可检视
-
 C.
-
 可追溯
-
 D.
-
 可验证
 
-9、（单选）对于下列函数实现，从单一职责，功能一致性等方面考虑，定义或者实现不合理，
-需要重构的有（忽略不同编程语言格式规范和语法差异）（B）
+9、（单选）对于下列函数实现，从单一职责，功能一致性等方面考虑，定义或者实现不合理，需要重构的有（忽略不同编程语言格式规范和语法差异）（B）
 
 A.
-
 ```cpp void SetScore(int value) { m_score = value; // m_score是成员变量 } ```
-
 B.
-
 ```cpp // 根据节点名称获取节点对象指针 Node* GetNode(const string& name) { Node* node =
 findInNodes(name); if (node == nullptr) { return (new Node(name)); } return node; } ```
-
 C.
-
 ```cpp int GetScore() const { return m_score； // m_score是成员变量 } ```
-
 D.
-
 ```cpp // 根据名称获取对应记录 Record* GetRecord(const string& name) { Item* item = findItem(name);
 if (item != nullptr) { return item->record; } return nullptr； } ```
 
-10、（单选）家庭环境监控系统是智能家居产品团队的主要产品，系统的主要设备是环境监测
-器，其中的关键部件数据收集器是绑定在环境监测器内部的，不能单独更换；另外可以根据需要
-安装和替换多种不同的传感器，比如有温度传感器、烟雾传感器等等；数据收集器只通过参数方
-式接收传感器对象并调用其方法获取数据。软件设计人员在绘制类图时遇到了困难，请指出其中
-类之间的关系正确的是（A）
-
-
-
+10、（单选）家庭环境监控系统是智能家居产品团队的主要产品，系统的主要设备是环境监测器，其中的关键部件数据收集器是绑定在环境监测器内部的，不能单独更换；另外可以根据需要安装和替换多种不同的传感器，比如有温度传感器、烟雾传感器等等；数据收集器只通过参数方式接收传感器对象并调用其方法获取数据。软件设计人员在绘制类图时遇到了困难，请指出其中类之间的关系正确的是（A）
 A.
-
 “环境监测器”与“数据收集器”之间应该是组合关系
-
 B.
-
 “数据收集器”与“传感器”之间应该是组合关系
-
 C.
-
 “烟雾传感器”与“传感器”之间应该是组合关系
-
 D.
-
 “温度传感器”与“传感器”之间应该是组合关系
 
 11、（单选）用于描述两个对象之间消息交互的UML图是 （B）
-
 A.
-
 部署图（Deployment Diagram）
-
 B.
-
 顺序图（Sequence Diagram）
-
 C.
-
 对象图（Object Diagram）
-
 D.
-
-客服
-
-
-评价
-
-
-展开
-
-
-
-
 
 状态图（State Diagram）
 
 12、（单选）如下代码存在什么坏味道，请忽略不同编程语言的差异和规范差异（B）
-
-```java\npublic static class EventOneHandler implements Handler {\n private static final StringEVENT_TYPE = \"EventOne\";\n @Override\n public void handle()
-{\nLogUtil.log(EventUtils.getMessage(EVENT_TYPE, \"start\"));\n try {\n 
-handleEventOne();\nLogUtil.log(EventUtils.getMessage(EVENT_TYPE, \"success\"));\n } catch(HandleException e) {\nLogUtil.log(EventUtils.getMessage(EVENT_TYPE, \"failed\"),
-e.getMessage());\n }\n }\n// other methods\n}\npublic static class EventTwoHandler implementsHandler {\n private static final String EVENT_TYPE = \"EventTwo\";\n @Override\n public voidhandle() {\nLogUtil.log(EventUtils.getMessage(EVENT_TYPE, \"start\"));\n try {\n 
-handleEventTwo();\nLogUtil.log(EventUtils.getMessage(EVENT_TYPE, \"success\"));\n } catch(HandleException e) {\nLogUtil.log(EventUtils.getMessage(EVENT_TYPE, \"failed\"),
-e.getMessage());\n }\n }\n// other methods\n}\n```
+java
+public static class EventOneHandler implements Handler {
+	private static final StringEVENT_TYPE = "EventOne";
+	@Override
+	public void handle()
+{
+LogUtil.log(EventUtils.getMessage(EVENT_TYPE, "start"));
+	try {
+ 
+handleEventOne();
+LogUtil.log(EventUtils.getMessage(EVENT_TYPE, "success"));
+	} catch(HandleException e) {
+LogUtil.log(EventUtils.getMessage(EVENT_TYPE, "failed"),
+e.getMessage());
+	}
+	}
+// other methods
+}
+public static class EventTwoHandler implementsHandler {
+	private static final String EVENT_TYPE = "EventTwo";
+	@Override
+	public voidhandle() {
+LogUtil.log(EventUtils.getMessage(EVENT_TYPE, "start"));
+	try {
+ 
+handleEventTwo();
+LogUtil.log(EventUtils.getMessage(EVENT_TYPE, "success"));
+	} catch(HandleException e) {
+LogUtil.log(EventUtils.getMessage(EVENT_TYPE, "failed"),
+e.getMessage());
+	}
+	}
+// other methods
+}
 
 A.
-
 狎昵关系（Inappropriate Intimacy）/内幕交易（Insider Trading）
-
 B.
-
 重复代码（Duplicated Code）
-
 C.
-
 依恋情结（Feature Envy）
-
 D.
-
 异曲同工的类（Alternative Classes with Different Interfaces）
 
 13、（单选）以下哪项不是产品在进行FMEA分析时需要考虑的因素 （B）
-
 A.
-
 是否涵盖了所有的功能子模块的主要故障模式
-
 B.
-
 是否从设计师的角度来进行定义
-
 C.
-
 是否考虑了最坏潜在后果
-
 D.
-
 是否考虑了自动恢复等对严酷度等级的影响
 
-14、（单选）小江负责平台模块A的开发，为某产品上层模块B提供服务，但小江发现每次B模块
-新增需求的时候，A模块总要一起修改，认为不合理，平台不应该与产品业务逻辑耦合。于是小
-江决定重构，将A模块中经常随B模块变化的地方提炼出来，设计成回调，将经常变化的地方由产
-品注册的回调函数来处理。 请结合上述问题背景，小江的重构方法主要尊循的设计原则是（D）
-
+14、（单选）小江负责平台模块A的开发，为某产品上层模块B提供服务，但小江发现每次B模块新增需求的时候，A模块总要一起修改，认为不合理，平台不应该与产品业务逻辑耦合。于是小江决定重构，将A模块中经常随B模块变化的地方提炼出来，设计成回调，将经常变化的地方由产品注册的回调函数来处理。 请结合上述问题背景，小江的重构方法主要尊循的设计原则是（D）
 A.
-
 合成复用原则（Composite Reuse Principle）
-
 B.
-
 接口隔离原则（Interface Segregation Principle）
-
 C.
-
 迪米特法则（Law of Demeter）
-
 D.
-
 开闭原则（Open Closed Principle）
 
-15、（单选）下面代码用于基于设备类型判断风扇转速是否有效，考虑到设备类型以及风扇速度
-类都有可能经常扩展，下面重构方法利于扩展的是（D）
+15、（单选）下面代码用于基于设备类型判断风扇转速是否有效，考虑到设备类型以及风扇速度类都有可能经常扩展，下面重构方法利于扩展的是（D）
 
-```cpp\nbool isValidSpeed(int fanSpeed){\n if (fanSpeed != SPEED_1 && fanSpeed != SPEED_2 &&
-fanSpeed != SPEED_3) {\n return false;\n }\nint realDevType = GetRealDevType();\nif ((realDevType== TYPE_1 || realDevType == TYPE_2) && fanSpeed == SPEED_STOP) {\n return false;\n }\n 
-return true;\n}\n```
+cpp
+bool isValidSpeed(int fanSpeed){
+	if (fanSpeed != SPEED_1 && fanSpeed != SPEED_2 &&
+fanSpeed != SPEED_3) {
+	return false;
+	}
+int realDevType = GetRealDevType();
+if ((realDevType== TYPE_1 || realDevType == TYPE_2) && fanSpeed == SPEED_STOP) {
+	return false;
+	}
+return true;
+}
+return true;
+}
 
 A.
-
 realDevType的值通过函数参数传进来
-
 B.
-
 函数本身功能简单，不需再优化
-
 C.
-
 直接将两个if判断部分代码直接拆分成独立函数
-
 D.
-
 针对fanSpeed和realDevType以查表方式重构代码
 
-16、（单选）UML建模，题目记不得了 （B）
 
-A.
-
-
-
-客服
-
-
-评价
-
-
-展开
-
-
-
-
-
-
-
-B.
-
-
-
-C.
-
-
-
-客服
-
-
-评价
-
-
-展开
-
-
-
-
-
-
-
-D.
 
 
 
