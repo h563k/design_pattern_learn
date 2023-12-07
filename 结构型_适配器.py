@@ -52,7 +52,33 @@ class NewBankPay(Payment, BankPay):
 这两通过NewBankPay适配器，调用了BankPay的cost函数
 但是表现形式采用了Payment的形式
 这么写实现了初步的适配器模式，但是 如果还有更多的银行支付系统需要接入呢？
-那么就需要把这个
+那么就需要把这个适配器进行抽象化
 """
 p = NewBankPay()
+p.pay(100)
+
+
+class ApplePay:
+    def cost(self, money):
+        print(f"苹果支付{money}")
+
+
+class PaymentAdapter(Payment):
+    def __init__(self, payment):
+        self.payment = payment
+
+    def pay(self, money):
+        self.payment.cost(money)
+
+
+"""
+将一个类的接口转行成客户端希望的另一个接口.
+适配器模式使得原本由于接口不兼容而不能一起工作的类可以一起工作
+两种实现方式
+类适配器: 采用多继承方式
+对象适配器: 使用组合
+"""
+p = PaymentAdapter(NewBankPay())
+p.pay(100)
+p = PaymentAdapter(ApplePay())
 p.pay(100)
