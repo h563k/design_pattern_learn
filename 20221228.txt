@@ -1,0 +1,280 @@
+1.
+下列关于数字签名的叙述中错误的是（）SelectedB,true[密码学算法应用] A.保证信息传输过程中的完整性 B.保证数据传输的机密性 C.发送者的身份认证 D.防止交易中的抵赖行为发生 
+
+2.
+关于安全架构设计，以下描述错误的有（）SelectedC,true[安全设计原则] 
+
+A.安全架构在《系统架构设计说明书》中，需要作为一个关键DFX来进行设计 B.与框架或安全视图不一样，威胁建模无法在全局架构视角上指导纵深防御设计 C.做好安全架构设计的标准是黑客无法攻进来 
+D.安全架构的设计是和其他DFX架构设计同步进行的 
+
+
+
+3. SelectedA,false[UML建模语言]C,false 
+A.“温度传感器”与“A型温度传感器”之间关系错误 
+B.“环境监测器”与“传感器”之间关系错误 
+C.“数据收集器”与“传感器”之间关系错误 
+D.“烟雾传感器”与“传感器”之间关系错误 
+
+4.下面代码片段中
+Manager和Engineer都是Employee的子类，我们对代码片段进了重构(注：在Java语言中子类构造方法中调用super方法表示调用父类的构造方法)，对比重构前后代码（请忽略不同编程语言的编程规范和语法差异），请问代码重构部分用到的重构手法是()SelectedC,true[掌握重构手法] 
+
+A.函数下移（PullDownMethod） 
+B.函数上移（PullUpMethod） 
+C.构造函数本体上移（PullUpConstructorBody） 
+D.字段下移（PullDownFiled） 
+
+
+5.使用
+STRIDE的威胁建模方法时，属于Tempering（篡改）的消减措施是 ()SelectedC,false[安全设计原则]D A.审计日志 B.权限最小化 C.沙箱技术 D.数字签名 
+
+6.
+在类图中，哪种关系表达总体与局部的关系()SelectedD,true[识别代码坏味道] 
+
+A.泛化（Generalization） 
+B.实现（Realization） 
+C.依赖（Dependency） 
+D.聚合（Aggregation） 
+
+
+7. Client端通过C调用D的实例，请问这是什么设计模式？()SelectedD,true[设计模式的分类、实现与应用] 
+
+
+A.适配器（Adapter）模式 
+B.桥接（Bridge）模式 
+C.外观（Facade）模式 
+D.代理（Proxy）模式 
+
+8. Use-case用例设计，错误的是()SelectedD,true[需求分析分解方法] A.用例将系统的功能范围分解成许多小的系统功能陈述 B.用例所讲述的场景可以包含一个或者多个需求 C.用例是系统执行的一系列动作，既可以是自动的也可以是手工的 D.用例应从系统自身实现的角度来提取 
+9.
+关于重构说法不合理的是（）SelectedC,false[重构概念与原则]D A.当前代码无法支撑新增功能，需要先重构再新增功能 B.检视时发现当前代码架构不合理，需要重构 C.由于分支太多、嵌套太深，导致阅读困难、无法理解代码意图，需要重构 D.由于函数的行数超过50行，所以必须重构 
+
+
+10.下面函数代码错误的是（）SelectedD,false[识别代码坏味道]A 
+A.参数太多，应该定义一个结构体将所有参数合并成一个inputPara对象 
+B.应该避免使用flag标签控制函数功能，可以拆分成两个函数，分别实现一般添加新学生功能和自动扩展班级容量的强
+
+制添加新学生的功能 
+C.gender参数应该定义成枚举或者类限制其有效值范围，避免直接使用基本类型 
+D.ext参数没有用，应该删除，不应该做这种无意义的未来扩展预留 
+11.如下代码存在哪种坏味道（请忽略不同编程语言的规范差异）SelectedB,false[识别代码坏味道]A 
+class User { private: ContactInfo contactInfo; 
+public: void GetUserAddress(Address& address){ 
+address.Country = contactInfo.GetCountry(); address.City = contactInfo.GetCity(); address.Street = contactInfo.GetStreet(); address.Community = contactInfo.GetCommunity(); 
+address.Building = contactInfo.GetBuilding(); address.Floor = contactInfo.GetFloor();}}; 
+A.依恋情结（Feature Envy） 
+B.数据泥团（DataClumps） 
+C.中间人（MiddleMan） 
+D.狎昵关系（InappropriateIntimacy）/内幕交易（InsiderTrading） 
+
+12.识别代码坏味道()SelectedA,false[识别代码坏味道]C 
+A.通过引入参数对象（IntroduceParameterObject），把register方法过多的的方法参数封装成一个或几个对象，消减过长函数（LongMethod）的坏味道 
+B.将函数使用的注册基本信息相关的参数聚合成一个对象User，解决用户注册信息逐渐增多带来的霰弹式修改（ShotgunSurgery）问题 
+C.运用提炼函数（ExtractMethod）将处理“注册主编”的case语句提炼到一个独立函数中，再以搬移函数（Move Method）将它挪移到经过多态改造的EditorRegister类中，通过以多态取代条件式（Replace Conditionalwith Polymorphism）的手法将不同角色的注册逻辑独立出来。 
+
+D.引入解释性变量（IntroduceExplainingVariable），降低圈复杂度和过长函数（LongMethod）等坏味道 
+13.
+新增网元设备时需要进行概念建模，对于需求分析阶段的概念建模，错误的是()SelectedB,true[需求分析分解方法] A.不仅要描述对象，还要描述对象之间的关系 B.不仅要描述问题本身，还要关心如何实现 C.不要为系统的方方面面都建模，识别出对系统重要概念即可 D.建模不必细化到完整的细节，比如类的属性具体类型可以不定义 
+
+14.使用
+uml对系统进行动态建模，不能使用以下哪种图()SelectedB,true[典型设计原则（SOLID原则）] A.顺序图 B.类图 C.状态图 D.活动图 
+
+
+15.下面代码片段，voidCheckSecurity那种重构最好()SelectedD,false[掌握重构手法]A A. 
+void CheckSecurity(const vector<string>& people){ 
+SomeLaterCode(FoundMiscreant(people));}string FoundMiscreant(const vector<string>& people){ 
+for (int i = 0; i < people.size(); i++) {if (people[i].compare("Don") == 0) { 
+return "Don";}if (people[i].compare("John") == 0) { 
+return "John";
+}}return "";
+} 
+B. 
+void CheckSecurity(const vector<string>& people)
+{ string found = "";for (int i = 0; i < people.size(); i++) {
+if (found.compare("") == 0) {if (people[i].compare("Don") == 0) {found = "Don"; 
+SomeLaterCode(found); }
+if (people[i].compare("John") == 0) { 
+found = "John";
+SomeLaterCode(found); }}}} 
+C. 
+void CheckSecurity(const vector<string>& people)
+{ string found = "";
+for (int i = 0; i < people.size(); i++) { 
+if (found.compare("") == 0) { 
+if (people[i].compare("Don") == 0) { 
+found = "Don";
+} else if (people[i].compare("John") == 0) { 
+found = "John";
+} else {
+;}}}
+SomeLaterCode(found); } 
+D. 
+void CheckSecurity(const vector<string>& people)
+{ string found = "";
+for (int i = 0; i < people.size(); i++) { 
+if ((found.compare("") == 0) && (people[i].compare("Don") == 0)) { 
+found = "Don";}
+if ((found.compare("") == 0) && (people[i].compare("John") == 0)) { 
+found = "John";}}
+SomeLaterCode(found); } 
+16. SelectedD,false[安全红线 3.0] 
+A.产品按公司最新发布的模板提供《通信矩阵》文档，列出机器 /网元 /模块间的通信配置，包括：通信使用的端口、协议、 IP地址、认证方式、端口用途信息等。 B.对于客户端连接对方侦听端口时所打开的端口，要求写入通信矩阵。 C.用于框内板间或框间级联的端口必须要写入通信矩阵。 D.面向最终消费者的移动终端产品，如手机、平板、大屏、音箱等，符合业界惯例，不强制要求提供通信矩阵。 
+17. SelectedA,false[典型设计原则（ SOLID原则） ] 
+A.接口隔离原则（ InterfaceSegregationPrinciple） 
+B.合成复用原则（ CompositeReusePrinciple） 
+C.迪米特法则（ LawofDemeter） 
+D.开闭原则（ OpenClosedPrinciple） 
+
+18. SelectedC,true[LowLevel威胁分析 ] A.STRIDE是一种以攻击者为中心的威胁建模方法，主要考虑攻击者可以如何对系统实施攻击，以及采用的攻击模式和方法，给攻击者画像的威胁建模方法。 B.攻击树是一种以资产为中心，关注资产如何遭受攻击，以及如何应对的威胁建模方法。 C.STRIDE是一种以软件为中心，关注正在建设的软件或系统，考虑软件 /系统可能面临的威胁以及消减措施的威胁建模方法。D.攻击树一般不用于威胁建模。 
+19. SelectedC,true[设计模式的分类、实现与应用 ] 
+A.将生成器 (Builder)模式应用于 Configuration 
+B.将抽象工厂 (AbstractFactory)模式应用于 Configuration 
+C.将单件 /单例 (Singleton)模式应用于 Configuration 
+D.将备忘录 (Memento)模式应用于 Configuration 
+
+
+20. SelectedB,false[设计模式的分类、实现与应用 ] 
+
+A. 
+B. 
+C. 
+
+
+D. 
+21. SelectedA,true[UML建模语言 ] A. 
+
+
+B. 
+
+
+C. 
+
+
+D. 
+
+
+22. SelectedC,false[Web应用安全设计 ] 
+A.检测 HTTP请求头 :Referer字段同域 
+B.设置合理的 Session超时时间
+
+C.使用验证码 D.Cookie关键字段设置 HttpOnly属性 
+23. SelectedC,true[重构概念与原则 ] A.修改不合理的函数命名 B.超大函数进行拆分和提取小函数 C.修正代码功能缺陷 D.参数列表过长，使用对象化合并部分参数 
+24. SelectedB,true[掌握重构手法 ] A. 
+
+
+B. 
+
+
+C. 
+
+
+D. 
+
+
+25. SelectedD,true[CSEC/ICSL典型设计问题、 TOPN问题 ] A.系统提供普通账号删除日志功能，可删除仅与自己账号相关的日志记录 B.调试日志中可以记录口令类信息 C.用户的权限变更可以不记录日志 
+D.日志记录字段包含用户 ID、时间、访问发起端地址或标识、事件类型、被访问资源的名称、事件结果等 
+26. SelectedD,false[典型设计原则（ SOLID原则） ] 
+A.自身关联（ ReflexiveAssociation） 
+B.聚合（ Aggregation） 
+C.泛化（ Generalization） 
+D.定向关联 (DirectedAssociation) 
+
+
+27. SelectedA,false[掌握重构手法 ] 
+A.从类 A派生出子类 B和C，在类 B和C中均有 ChangeName的操作，将 ChangeName提取到类 A中 
+B.将类 A中的接口 InterfaceA和InterfaceB搬移到一个单独的新类 B中 
+
+C.当发现类 A某个函数不仅仅适用于当前类，还适用于其它的类时，将该函数抽取为独立函数放入已有的工具类中，供其他类使用 
+D.类A和类 B均对同一对象做相同的设置操作，通过提取一个基类消除这部分重复的数据及其相关操作 
+
+
+28. SelectedA,true[设计模式的分类、实现与应用 ] 
+A.职责链 (Chainofresponsibility)模式 
+B.观察者 (Observer)模式 
+C.迭代器 (Iterator)模式 
+D.装饰 (Decorator)模式 
+
+
+
+29. SelectedA,true[密钥管理安全 ] A.同一个预共享密钥，既可以用于认证，又可以用于完整性保护。 
+B.一个密钥可以通过算法派生成两个密钥，一个用于计算 MAC值以验证数据的完整性，一个用于敏感数据加密以保证数据的机密性。 
+C.分组密码算法中的某些工作模式，如 GCM、CCM，可以同时提供加密和消息认证服务。 D.数字签名可以同时提供身份认证、数据完整性以及抗抵赖服务。 
+
+30. Selected[AB],false[安全红线 3.0] 
+A.通过 CRC算法对文件进行差错校验也是一种完整性保护机制。 
+B.采用 U盘方式进行版本升级时不需要进行完整性校验。 C.可采用检查数字签名的方式进行软件包完整性校验。 D.系统升级时，使用软件包中自带的公钥证书对该软件包进行数字签名校验，可以保证软件包完整性。 
+
+31. Selected[AB],true[识别代码坏味道 ] A. 
+//传入两个数字，返回这两个数字之和 
+int sum(int a, int b) { return a + b 
+} 
+B. 
+//传入一个数值数组，找到其中所有的偶数，判断偶数中的最大值是否大于 10 
+boolean find(List<Integer> numbers) { List<Integer> list_a = new ArrayList<Integer>(); for (Integer number : numbers) { 
+if (number % 2 == 0) { list_a.add(number); 
+}}Integer b = list_a.indexOf(0); for (Integer a : list_a) { 
+if (b < a) { b = a;
+}}return b > 10;
+} 
+C. 
+/*** XX模块初始化，需要在系统初始化 XX阶段前调用 * 
+* 
+@param level启动级别，参见 Level枚举定义 
+
+* 
+@param timeOut超时时间，单位毫秒，不得超过 5000 
+
+* 
+@return状态码 * @since 1.0 */
+
+
+public int init(Level level, long timeOut) { ... } 
+D. 
+//此函数仅为兼容目的使用，其他情况请使用 max函数替代 
+int choose(int a, int b) { return a > b ? a : b;} 
+32. Selected[ABC],false[需求获取方法 ] A.对需求进行分类 B.理清满足客户的什么诉求，解决什么业务问题（这里的客户不仅指终端客户，也包括运维部门） C.梳理产品内部需求（如缺陷合入、漏洞修复等） D.开展调查问卷，了解在哪些方面提升了用户体验，增强产品竞争力。 
+33. Selected[ABCD],true[隐私保护设计 ] A.高影响的用户个人数据 B.SessionID C.密码 D.密钥 
+34. Selected[ABD],true[软件需求分析的原则与基本流程 ] A.对系统中的文件存取，要严格限制重要文件的存取，防止未被授权用户访问 B.对系统访问要进行严格限制，如：对允许登录用户的登录尝试次数，要进行限制 C.对系统补丁，因为业务不需要，所以，不需要定期安装 D.只给用户分配足够其完成任务的最小权限 
+
+35. Selected[ABC],true[需求管理方法，包括需求优先级排序方法、变更管理流程控制、需求验收策略等 ] A.是否符合产品现阶段的战略目标
+B.用KANO模型定义需求属性 C.紧急程度和成本 D.需求的影响程度不是考虑因素 
+
+36. Selected[BCD],true[身份和访问控制管理安全设计 ] A.当用户认证尝试失败在指定次数后，断开当前会话即可防止暴力破解 
+B.当用户认证尝试失败在指定次数后，应锁定帐号或锁定 IP 
+C.如果攻击者总是尝试暴力破解某个帐户，则 “锁定帐号 ”的机制会使该帐户一直处于禁用状态不能使用 
+D.当攻击者采用口令固定、帐户不断变化的暴力破解方式时， “锁定帐号 ”的方式很难防止 
+
+
+
+37. Selected[ABC],false[掌握重构手法 ] 
+A.使用 ReplaceTypeCodeWithClass(以类型取代类型码 )，将 workmode转换为类 
+B.使用 ReplaceTypeCodeWithSubClasses(以子类取代类型码 )，建立 Modulator类和 Demodulator类 
+C.使用 ReplaceConditionalWithPolymorphism(以多态取代条件表达式 )，将 SendSignal等函数的分支分别放进 Modulator类和Demodulator类 
+D.使用 ExtractMethod(提炼函数 )，将 SendSignal等函数的分支提炼为函数 
+
+
+38. Selected[AC],false[设计模式的分类、实现与应用 ] 
+
+A. 
+B. 
+C. 
+
+
+D. 
+39. Selected[AB],false[需求质量要求及验收标准，相关交付件写作方法 ] A.新老版本保持兼容 B.新单板支持快速启动 
+C.用户密码输入错误超过 5次时，提示用户 “对不起，您密码重试次数已达到限制 ” 
+D.描述系统性能指标需求为 “系统正常的响应时间应少于 2秒” 
+
+
+40. Selected[AD],true[UML建模语言 ] A.A类用户可以查看商品但是不能结算商品 B.B类用户可以结算商品但是不能查看商品 C.A类用户可以将商品添加到购物车，也可以分享购物车的商品 D.B类用户可以将商品添加到购物车，也可以分享购物车的商品 
+
+41. Selected[BCD],false[掌握重构手法 ] 
+A.将switch语句改成 ifelse判断，并按照每几个类型判断（比如 5个）提取成子函数，这样既可以有效降低函数圈复杂度，又没有风险 B.使用表驱动方式重构，处理消息时根据消息类型查表找到对应处理方法执行 C.按照消息不同的类型和子类型设计消息类继承关系，将定义消息类继承树，处理消息时通过工厂创建对应具体消息对象处理 
+D.使用适配器（ Adapter）模式，每个消息类型新建一个处理对应消息类型的适配器，处理消息时根据消息类型创建对应适配器对象执行 
+
+
+42. Selected[ABC],true[隐私保护设计 ] 
+
+A.某应用程序 APP需要收集用户的 IMEI，但未向用户提供隐私声明 B.某网上营业厅，用户无法更新自己录入系统中的个人数据 C.某网上营业厅数据存储服务器，未对高影响个人数据加密存储 D.某系统针对系统错误日志中个人数据进行专项匿名化处理 
+43. Selected[ABC],true[需求分析需要关注的场景和维度（功能 /质量 /约束 /DFX需求） ] A.需求分析中，对不明确的功能需求，要进行细致调查后进行具体化 B.需求分析时，对业务目标、业务场景和使用约束等都需要考虑 C.需求分析过程中，需要将需求转化成形式化的功能规约，如需求规格说明书 D.采用敏捷流程后，需求分析完成后，可以不用输出形式化的功能规约 
+http://3ms.huawei.com/km/blogs/details/13716315 
+
